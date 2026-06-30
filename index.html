@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A'ang Kurnia | Portofolio Profesional</title>
+    <title>A'ang Kurnia | Portofolio Teknik Sipil</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome untuk Ikon -->
@@ -13,159 +13,230 @@
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
     </style>
 </head>
-<body class="bg-white text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- NAVBAR -->
-    <nav class="bg-white sticky top-0 z-50 shadow-xs border-b border-slate-100">
+    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo Bulat Oranye sesuai Gambar Contoh -->
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-sm">A</div>
-                <span class="text-xl font-extrabold tracking-wider text-slate-900">A'ANG KURNIA</span>
+                <span class="text-xl font-black tracking-wider text-slate-900">A'ANG KURNIA</span>
             </div>
-            
-            <!-- Menu Navigasi -->
-            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 items-center">
-                <a href="#" class="text-orange-500 border-b-2 border-orange-500 pb-1">Home</a>
-                <a href="#tentang" class="hover:text-orange-500 transition">About</a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#home" class="text-orange-500 hover:text-orange-600 transition">Home</a>
+                <a href="#about" class="hover:text-orange-500 transition">About</a>
                 <a href="#pengalaman" class="hover:text-orange-500 transition">Experience</a>
                 <a href="#keahlian" class="hover:text-orange-500 transition">Skills</a>
-                <a href="#kontak" class="bg-orange-500 text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition shadow-sm">Contact</a>
+                <a href="#kontak" class="bg-orange-500 text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 shadow-md transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION (Gaya Kreatif Sesuai Contoh Gambar) -->
-    <header class="relative min-h-[85vh] flex items-center bg-white px-6 overflow-hidden">
-        <!-- Dekorasi Lingkaran Latar Belakang -->
-        <div class="absolute top-12 right-[32%] w-32 h-32 bg-orange-500 rounded-full opacity-90 hidden lg:block"></div>
-        <div class="absolute bottom-16 right-[24%] w-40 h-24 bg-teal-800 rounded-full opacity-90 hidden lg:block"></div>
-
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center w-full relative z-10 py-12">
+    <!-- HERO SECTION (HOME) -->
+    <header id="home" class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center relative">
+        <!-- Ornamen Lingkaran Jingga Atas -->
+        <div class="absolute top-4 right-1/3 w-24 h-24 bg-orange-400 rounded-full opacity-80 -z-10"></div>
+        
+        <div>
+            <h1 class="text-4xl md:text-5xl font-normal text-slate-900 mb-2">Hello, I'm <span class="font-black text-slate-950 block md:inline">A'ang</span></h1>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-orange-500 mb-6 tracking-tight">Civil Engineering & QC Engineer</h2>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-8">
+                Lulusan Teknik Sipil Universitas Gunadarma yang berdedikasi tinggi dan berpengalaman dalam supervisi lapangan, manajemen konstruksi, serta memastikan kontrol kualitas (QC) material berjalan sesuai standar struktural industri.
+            </p>
             
-            <!-- SISI KIRI: Teks & Informasi Kontak -->
-            <div class="lg:col-span-7 space-y-6">
-                <h2 class="text-4xl md:text-5xl font-light text-slate-900 tracking-tight">
-                    Hello, I'm <span class="font-bold">A'ang</span>
-                </h2>
-                <h3 class="text-2xl md:text-3xl font-bold text-orange-500 tracking-wide">
-                    Civil Engineering & QC Engineer
-                </h3>
-                <p class="text-slate-500 leading-relaxed max-w-xl text-sm md:text-base border-b border-slate-200 pb-6">
-                    Lulusan Teknik Sipil Universitas Gunadarma yang berdedikasi tinggi dan berpengalaman dalam supervisi lapangan, manajemen konstruksi, serta memastikan kontrol kualitas (QC) material berjalan sesuai standar struktural industri.
-                </p>
-
-                <!-- Kotak Info Kontak Mengambang (Floating Card) -->
-                <div class="bg-white rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 max-w-lg space-y-4">
-                    <div class="flex items-center space-x-4 text-sm text-slate-700">
-                        <i class="fa-solid fa-phone text-teal-700 text-lg w-5 text-center"></i>
-                        <span>+62 852 8108 0925</span>
-                    </div>
-                    <div class="flex items-center space-x-4 text-sm text-slate-700">
-                        <i class="fa-solid fa-envelope text-teal-700 text-lg w-5 text-center"></i>
-                        <span class="break-all">aangproject027@gmail.com</span>
-                    </div>
-                    <div class="flex items-center space-x-4 text-sm text-slate-700">
-                        <i class="fa-solid fa-location-dot text-teal-700 text-lg w-5 text-center"></i>
-                        <span>Kebayoran Lama, Jakarta Selatan</span>
-                    </div>
-                    <!-- Ikon Sosial Media Medali Emas -->
-                    <div class="flex space-x-3 pt-2 border-t border-slate-100">
-                        <a href="https://wa.me/6285281080925" target="_blank" class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center hover:bg-orange-500 transition text-sm"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center hover:bg-orange-500 transition text-sm"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center hover:bg-orange-500 transition text-sm"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
+            <!-- Kontak Card Mini -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xl shadow-slate-100 space-y-4 max-w-md">
+                <div class="flex items-center space-x-3 text-sm text-slate-700">
+                    <i class="fa-solid fa-phone text-emerald-500 w-5 text-center"></i>
+                    <span>+62 852 8108 0925</span>
+                </div>
+                <div class="flex items-center space-x-3 text-sm text-slate-700">
+                    <i class="fa-solid fa-envelope text-orange-500 w-5 text-center"></i>
+                    <span class="break-all">aangproject027@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-3 text-sm text-slate-700">
+                    <i class="fa-solid fa-location-dot text-red-500 w-5 text-center"></i>
+                    <span>Kebayoran Lama, Jakarta Selatan</span>
+                </div>
+                <div class="flex space-x-3 pt-2 border-t border-slate-100">
+                    <a href="https://wa.me/6285281080925" target="_blank" class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm hover:scale-110 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm hover:scale-110 transition"><i class="fa-brands fa-facebook"></i></a>
                 </div>
             </div>
+        </div>
 
-            <!-- SISI KANAN: Foto Profil Tumpuk 3D -->
-            <div class="lg:col-span-5 flex justify-center relative pt-8 lg:pt-0">
-                <!-- Bingkai Tumpuk Belakang -->
-                <div class="absolute w-[280px] h-[360px] bg-slate-100 border border-slate-200 rounded-2xl transform rotate-6 translate-x-4 translate-y-2"></div>
-                
-                <!-- Bingkai Utama Depan -->
-                <div class="relative w-[280px] h-[360px] bg-white border border-slate-200 rounded-2xl p-3 shadow-xl transform -rotate-2 transition hover:rotate-0 duration-300">
-                    <div class="w-full h-[88%] rounded-xl overflow-hidden bg-slate-100">
-                        <!-- Mengarah ke foto Anda -->
-                        <img src="foto-profile.png" alt="A'ang Kurnia" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'">
-                    </div>
-                    <!-- Label Tag Nama di Atas Foto -->
-                    <div class="absolute bottom-6 right-1 bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-l-md rounded-br-md shadow">
-                        A'ang Kurnia, S.T.
-                    </div>
+        <!-- FOTO PROFIL DENGAN POLAROID FRAME -->
+        <div class="flex justify-center relative">
+            <div class="bg-white p-4 pb-12 rounded-2xl shadow-2xl border border-slate-200/60 max-w-sm rotate-2 hover:rotate-0 transition duration-300 relative">
+                <!-- FOTO ASLI ANDA AKAN MENGGANTIKAN PATH INI -->
+                <img src="foto-profil.png" alt="A'ang Kurnia, S.T." class="w-full h-80 object-cover rounded-xl object-top bg-slate-100">
+                <div class="absolute bottom-4 right-4 bg-orange-500 text-white px-4 py-1 rounded text-xs font-bold tracking-wide uppercase shadow shadow-orange-600/50">
+                    A'ang Kurnia, S.T.
                 </div>
             </div>
-
+            <!-- Ornamen Lingkaran Hijau Bawah -->
+            <div class="absolute -bottom-6 right-12 w-32 h-16 bg-teal-700 rounded-full -z-10"></div>
         </div>
     </header>
 
-    <!-- SECTION 2: FILOSOFI KERJA -->
-    <section id="tentang" class="py-16 bg-slate-50 px-6 border-t border-slate-100">
-        <div class="max-w-4xl mx-auto text-center lg:text-left grid lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-5">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                    We Have Dedicated<br>Skills On These
-                </h2>
+    <!-- PRINSIP HIDUP BAR -->
+    <section id="about" class="bg-white py-12 border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-6 items-center">
+            <div class="md:col-span-2">
+                <h3 class="text-2xl md:text-3xl font-black text-slate-900 leading-tight">We Have Dedicated Skills On These</h3>
             </div>
-            <div class="lg:col-span-7">
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed">
-                    Berbekal prinsip hidup <span class="italic font-semibold text-orange-500">"carefully planning things, executing them to the fullest, and praying for the best outcomes"</span>, saya selalu memastikan setiap fase pengerjaan fisik di lapangan terdokumentasi rapi dan presisi demi meminimalisir kesalahan struktur fatal.
-                </p>
+            <div class="md:col-span-3 text-slate-600 text-sm leading-relaxed border-l-4 border-orange-500 pl-6">
+                Berbekal prinsip hidup <span class="italic font-bold text-orange-600">"carefully planning things, executing them to the fullest, and praying for the best outcomes"</span>, saya selalu memastikan setiap fase pengerjaan fisik di lapangan terdokumentasi rapi dan presisi demi meminimalisir kesalahan struktur fatal.
             </div>
         </div>
     </section>
 
-    <!-- PENGALAMAN PROYEK -->
-    <section id="pengalaman" class="py-16 bg-white px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold text-slate-900 mb-8 border-l-4 border-orange-500 pl-3">Pengalaman Kerja</h2>
-            <div class="space-y-8">
-                <div class="bg-white border border-slate-200 p-6 rounded-xl hover:shadow-md transition">
-                    <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-950">Quality Control Engineer</h3>
-                            <p class="text-sm font-medium text-orange-500">PT. ARKINDO - PT. GALATAMA, KSO</p>
-                        </div>
-                        <span class="text-xs font-bold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">2018 - 2023</span>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4 italic">Proyek: Pembangunan Gedung Fakultas Kedokteran, UPN Veteran Jakarta (Depok)</p>
+    <!-- SEMUA PENGALAMAN KERJA LENGKAP -->
+    <section id="pengalaman" class="py-20 bg-slate-100/60 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-orange-500 text-xs font-black uppercase tracking-widest bg-orange-50 px-3 py-1 rounded-full border border-orange-200">Riwayat Karir</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-3">Pengalaman Kerja Lapangan</h2>
+            </div>
+
+            <!-- Timeline wrapper -->
+            <div class="relative border-l-2 border-slate-300 ml-4 md:ml-32 space-y-12">
+                
+                <!-- 1. QUALITY CONTROL ENGINEER -->
+                <div class="relative pl-8 md:pl-12">
+                    <!-- Penanda Waktu di Sisi Kiri -->
+                    <div class="hidden md:block absolute -left-36 top-1.5 w-28 text-right text-xs font-black text-slate-400 uppercase tracking-wider">2018 - 2023</div>
+                    <div class="absolute -left-[11px] top-1.5 bg-orange-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+                    <span class="md:hidden text-xs font-black text-orange-600 block mb-1">2018 - 2023</span>
+                    <h3 class="text-xl font-extrabold text-slate-950">Quality Control Engineer</h3>
+                    <p class="text-sm font-bold text-orange-500 mb-1">PT. ARKINDO - PT. GALATAMA, KSO</p>
+                    <p class="text-xs text-slate-500 italic mb-3"><i class="fa-solid fa-map-marker-alt mr-1"></i> Proyek: Pembangunan Gedung Fakultas Kedokteran, UPN Veteran Jakarta (Depok)</p>
                     <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
-                        <li>Mengawasi dan memverifikasi keselarasan hasil lapangan dengan *shop drawings*.</li>
-                        <li>Memeriksa kelayakan mutu serta volume material konstruksi yang dipasok.</li>
-                        <li>Melakukan audit komprehensif terhadap cacat produk beton/struktural.</li>
+                        <li>Mengawasi dan memverifikasi hasil pekerjaan lapangan agar selaras dengan *shop drawings* sebelum lanjut ke tahapan berikutnya.</li>
+                        <li>Menginspeksi dan memonitor jalannya proses konstruksi, menjamin kepatuhan terhadap standar mutu teknik.</li>
+                        <li>Memverifikasi dan memastikan kualitas serta kuantitas material bangunan yang masuk ke area site.</li>
+                        <li>Melakukan inspeksi menyeluruh untuk mendeteksi adanya cacat (*defects*) pada hasil akhir pekerjaan struktural.</li>
+                        <li>Menyusun laporan detail kemajuan pekerjaan berkala lengkap beserta dokumentasi visualnya.</li>
                     </ul>
                 </div>
+
+                <!-- 2. FREELANCE SUPERVISOR -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 top-1.5 w-28 text-right text-xs font-black text-slate-400 uppercase tracking-wider">Freelance</div>
+                    <div class="absolute -left-[11px] top-1.5 bg-slate-800 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+                    <span class="md:hidden text-xs font-black text-slate-600 block mb-1">Freelance Project</span>
+                    <h3 class="text-xl font-extrabold text-slate-950">Project Supervisor</h3>
+                    <p class="text-sm font-bold text-orange-500 mb-1">Freelance Proyek Konstruksi</p>
+                    <p class="text-xs text-slate-500 italic mb-3"><i class="fa-solid fa-map-marker-alt mr-1"></i> Proyek: Pembangunan Jogging Track, Permata Hijau (Jakarta Timur)</p>
+                    <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                        <li>Memimpin, mengarahkan, dan mengelola tim pekerja konstruksi di lapangan secara harian.</li>
+                        <li>Menyusun laporan anggaran biaya (*cost report*) realisasi proyek.</li>
+                        <li>Mengatur skema manajemen pengadaan material dan peralatan penunjang yang dibutuhkan di lokasi.</li>
+                        <li>Membuat dan mengendalikan target jadwal pelaksanaan proyek (*project schedule*).</li>
+                        <li>Menyusun laporan berkala perkembangan fisik proyek (Laporan Harian, Mingguan, dan Bulanan).</li>
+                    </ul>
+                </div>
+
+                <!-- 3. SURVEYOR & DRAFTER -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 top-1.5 w-28 text-right text-xs font-black text-slate-400 uppercase tracking-wider">Kontrak Proyek</div>
+                    <div class="absolute -left-[11px] top-1.5 bg-slate-800 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+                    <span class="md:hidden text-xs font-black text-slate-600 block mb-1">Project Contract</span>
+                    <h3 class="text-xl font-extrabold text-slate-950">Surveyor and Drafter</h3>
+                    <p class="text-sm font-bold text-orange-500 mb-1">PT. TRI BINA BUANA</p>
+                    <p class="text-xs text-slate-500 italic mb-3"><i class="fa-solid fa-map-marker-alt mr-1"></i> Proyek: Pembangunan Septic Tank & Waste Water Treatment Plant, Kramat Sentiong (Jakarta Timur)</p>
+                    <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                        <li>Mengedukasi masyarakat sekitar mengenai fungsi dan manfaat septic tank serta instalasi pengolahan limbah air.</li>
+                        <li>Melakukan peninjauan lapangan untuk mengidentifikasi titik penempatan optimal bak penampungan.</li>
+                        <li>Membuat gambar denah pemetaan lokasi penempatan unit septic tank di pemukiman warga.</li>
+                        <li>Mengembangkan gambar teknik detail (*Detailed Engineering Design* / DED) untuk sistem septic tank.</li>
+                    </ul>
+                </div>
+
+                <!-- 4. WAREHOUSE DELIVERY DRIVER -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 top-1.5 w-28 text-right text-xs font-black text-slate-400 uppercase tracking-wider">Logistik</div>
+                    <div class="absolute -left-[11px] top-1.5 bg-slate-400 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+                    <span class="md:hidden text-xs font-black text-slate-400 block mb-1">Logistik</span>
+                    <h3 class="text-xl font-extrabold text-slate-950">Warehouse Delivery Driver</h3>
+                    <p class="text-sm font-bold text-orange-500 mb-1">PT. SHOPEE (Hub Palmerah)</p>
+                    <p class="text-xs text-slate-500 italic mb-3"><i class="fa-solid fa-map-marker-alt mr-1"></i> Wilayah Operasional: Jakarta Barat</p>
+                    <ul class="text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                        <li>Bertanggung jawab penuh mendistribusikan dan mengirimkan pesanan paket langsung ke pelanggan secara tepat waktu.</li>
+                        <li>Memiliki kemampuan navigasi rute yang sangat baik guna mengoptimalkan akurasi dan efisiensi waktu perjalanan.</li>
+                        <li>Menjaga kualitas layanan perusahaan lewat pola komunikasi yang santun dan solutif bersama pelanggan.</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- KEAHLIAN & SERTIFIKAT -->
-    <section id="keahlian" class="py-16 bg-slate-50 px-6">
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+    <!-- KEAHLIAN & SERTIFIKASI -->
+    <section id="keahlian" class="py-20 max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Kompetensi Teknis -->
             <div>
-                <h2 class="text-xl font-bold text-slate-900 mb-4">Software Mastery</h2>
-                <div class="space-y-3 text-sm font-semibold">
-                    <div><div class="flex justify-between mb-1"><span>AutoCAD (Drafter)</span><span>85%</span></div><div class="w-full bg-slate-200 h-2 rounded"><div class="bg-orange-500 h-full w-[85%] rounded"></div></div></div>
-                    <div><div class="flex justify-between mb-1"><span>SketchUp (3D Visual)</span><span>80%</span></div><div class="w-full bg-slate-200 h-2 rounded"><div class="bg-orange-500 h-full w-[80%] rounded"></div></div></div>
-                    <div><div class="flex justify-between mb-1"><span>MS Project & Excel</span><span>90%</span></div><div class="w-full bg-slate-200 h-2 rounded"><div class="bg-orange-500 h-full w-[90%] rounded"></div></div></div>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                    <i class="fa-solid fa-sliders text-orange-500 mr-3"></i> Technical Skills
+                </h2>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1"><span>AutoCAD (2D/3D Drafting)</span><span>85%</span></div>
+                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-orange-500 h-full w-[85%]"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1"><span>SketchUp (3D Modeling)</span><span>80%</span></div>
+                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-orange-500 h-full w-[80%]"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1"><span>Microsoft Office (Excel, Word, PPT)</span><span>90%</span></div>
+                        <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-orange-500 h-full w-[90%]"></div></div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="bg-white border border-slate-200 text-slate-700 text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm">Manajemen Konstruksi</span>
+                    <span class="bg-white border border-slate-200 text-slate-700 text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm">Supervisi Lapangan</span>
+                    <span class="bg-white border border-slate-200 text-slate-700 text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm">Perencanaan Drainase</span>
+                    <span class="bg-white border border-slate-200 text-slate-700 text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm">K3 Konstruksi Utama</span>
                 </div>
             </div>
+
+            <!-- Sertifikasi Berkas -->
             <div>
-                <h2 class="text-xl font-bold text-slate-900 mb-4">Sertifikasi Utama</h2>
-                <div class="text-xs space-y-2 text-slate-600">
-                    <div class="p-2.5 bg-white rounded border border-slate-200 flex justify-between"><span>AutoCAD Basic Certificate</span><span class="font-bold text-orange-500">2023</span></div>
-                    <div class="p-2.5 bg-white rounded border border-slate-200 flex justify-between"><span>Managing Project with MS Project</span><span class="font-bold text-orange-500">2022</span></div>
-                    <div class="p-2.5 bg-white rounded border border-slate-200 flex justify-between"><span>Implementing K3 Occupational Health</span><span class="font-bold text-orange-500">2019</span></div>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                    <i class="fa-solid fa-award text-orange-500 mr-3"></i> Sertifikasi & Diklat
+                </h2>
+                <div class="bg-white border border-slate-200 rounded-2xl divide-y divide-slate-100 text-sm shadow-sm overflow-hidden">
+                    <div class="p-3.5 flex justify-between items-center hover:bg-slate-50/50">
+                        <div><p class="font-bold text-slate-900">AutoCAD Basic Certification</p><p class="text-xs text-slate-400">Pusat Diklat Kompetensi</p></div>
+                        <span class="text-xs font-black text-slate-500 bg-slate-100 px-2 py-0.5 rounded">2023</span>
+                    </div>
+                    <div class="p-3.5 flex justify-between items-center hover:bg-slate-50/50">
+                        <div><p class="font-bold text-slate-900">Managing Project with MS Project</p><p class="text-xs text-slate-400">Construction Management</p></div>
+                        <span class="text-xs font-black text-slate-500 bg-slate-100 px-2 py-0.5 rounded">2022</span>
+                    </div>
+                    <div class="p-3.5 flex justify-between items-center hover:bg-slate-50/50">
+                        <div><p class="font-bold text-slate-900">Detail Design of Drainage Network</p><p class="text-xs text-slate-400">Infrastruktur Keairan</p></div>
+                        <span class="text-xs font-black text-slate-500 bg-slate-100 px-2 py-0.5 rounded">2021</span>
+                    </div>
+                    <div class="p-3.5 flex justify-between items-center hover:bg-slate-50/50">
+                        <div><p class="font-bold text-slate-900">Implementing Safety & Occupational Health (K3)</p><p class="text-xs text-slate-400">K3 Konstruksi</p></div>
+                        <span class="text-xs font-black text-slate-500 bg-slate-100 px-2 py-0.5 rounded">2019</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER / KONTAK -->
-    <footer id="kontak" class="bg-slate-900 text-white py-12 text-center text-sm border-t-4 border-orange-500">
-        <p class="font-bold text-orange-500 tracking-widest uppercase mb-2">A'ANG KURNIA</p>
-        <p class="text-slate-400 max-w-xs mx-auto mb-6 text-xs">Kebayoran Lama, Kota Jakarta Selatan, DKI Jakarta</p>
-        <p class="text-xs text-slate-600">&copy; 2026. All rights reserved.</p>
+    <footer id="kontak" class="bg-slate-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">Hubungi Saya</p>
+            <h2 class="text-2xl font-black mb-8">Siap Berkontribusi Maksimal di Proyek Anda</h2>
+            <p class="text-xs text-slate-500">&copy; 2026 A'ang Kurnia, S.T. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
