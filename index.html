@@ -32,6 +32,7 @@
             padding: 40px;
             border-radius: 30px;
             box-shadow: 15px 15px 30px var(--shadow-dark), -15px -15px 30px var(--shadow-light);
+            box-sizing: border-box;
         }
 
         /* Profile Header Section */
@@ -81,6 +82,7 @@
             box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
             font-size: 0.95em;
             line-height: 1.8;
+            word-wrap: break-word;
         }
 
         /* Interactive Contact Links */
@@ -117,6 +119,8 @@
             transition: all 0.2s ease-in-out;
             box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
             outline: none;
+            flex: 1 1 auto; /* Allows buttons to grow if needed */
+            text-align: center;
         }
 
         /* Button Active / Clicked State */
@@ -127,12 +131,12 @@
 
         /* Content Sections */
         .tab-content {
-            display: none; /* Hide all by default */
+            display: none;
             animation: fadeIn 0.4s ease-in-out;
         }
 
         .tab-content.active {
-            display: block; /* Show active */
+            display: block;
         }
 
         @keyframes fadeIn {
@@ -147,6 +151,7 @@
             margin-bottom: 25px;
             box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light);
             line-height: 1.7;
+            box-sizing: border-box;
         }
 
         h2 {
@@ -186,11 +191,63 @@
             box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
+        /* --- FIT TO HANDPHONE (RESPONSIVE DESIGN) --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px; /* Jarak luar dikurangi agar pas di layar HP */
+            }
+
+            .container {
+                padding: 25px 15px; /* Jarak dalam kotak dikurangi */
+                border-radius: 20px;
+            }
+
             .header {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
+                padding-bottom: 20px;
+            }
+
+            .profile-img-container {
+                width: 120px; /* Foto profil sedikit diperkecil */
+                height: 120px;
+            }
+
+            .header-info h1 {
+                font-size: 1.8em; /* Ukuran teks judul diperkecil */
+            }
+
+            .contact-card {
+                font-size: 0.85em;
+                padding: 12px;
+            }
+
+            .nav-menu {
+                gap: 10px;
+            }
+
+            .nav-btn {
+                padding: 10px 15px;
+                font-size: 0.85em;
+                flex: 1 1 45%; /* Tombol dibagi jadi dua kolom di HP */
+            }
+
+            .content-card {
+                padding: 15px; /* Jarak dalam teks konten dikurangi */
+            }
+
+            h2 {
+                font-size: 1.1em;
+            }
+
+            .job-title {
+                font-size: 1em;
+            }
+
+            .skills-tag {
+                padding: 6px 12px;
+                font-size: 0.85em;
             }
         }
     </style>
@@ -221,7 +278,7 @@
         <button class="nav-btn active" onclick="openTab('summary', this)">Summary</button>
         <button class="nav-btn" onclick="openTab('experience', this)">Work Experience</button>
         <button class="nav-btn" onclick="openTab('education', this)">Education</button>
-        <button class="nav-btn" onclick="openTab('skills', this)">Skills & Certifications</button>
+        <button class="nav-btn" onclick="openTab('skills', this)">Skills</button>
     </div>
 
     <!-- TAB 1: Summary -->
