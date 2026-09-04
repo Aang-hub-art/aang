@@ -1,314 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta
-charset="UTF-8">
-    <meta
-name="viewport" content="width=device-width,
-initial-scale=1.0">
-   <title>A'ANG KURNIA - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A'ANG KURNIA - Interactive Portfolio</title>
     <style>
-        /*
-Skeuomorphic Design CSS */
+        /* Base Skeuomorphic Theme */
+        :root {
+            --bg-color: #e0e5ec;
+            --shadow-light: #ffffff;
+            --shadow-dark: #a3b1c6;
+            --text-main: #4a4a4a;
+            --text-highlight: #2c3e50;
+            --accent: #5a7b9c;
+        }
+
         body {
-           background-color: #d1d9e6;
-           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color:
-#4a4a4a;
-            margin:
-0;
-           padding: 20px;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
         }
- 
-        .container
-{
-           max-width: 800px;
-            margin:
-0 auto;
-           background: #e0e5ec;
-           padding: 40px;
-           border-radius: 20px;
-            /*
-Skeuomorphic physical board effect */
-           box-shadow: 12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff;
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--bg-color);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 15px 15px 30px var(--shadow-dark), -15px -15px 30px var(--shadow-light);
         }
- 
-        h1, h2, h3
-{
-            color:
-#333;
-        }
- 
+
+        /* Profile Header Section */
         .header {
-           text-align: center;
-           margin-bottom: 40px;
-           padding-bottom: 20px;
-           border-bottom: 2px solid #fff;
-           box-shadow: 0 4px 2px -2px #a3b1c6;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            box-shadow: 0 10px 10px -10px var(--shadow-dark);
         }
- 
-        .header h1
-{
-           font-size: 2.5em;
-           text-transform: uppercase;
-           letter-spacing: 2px;
-           text-shadow: 1px 1px 2px #fff, -1px -1px 2px #a3b1c6;
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            padding: 8px;
+            background: var(--bg-color);
+            box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
         }
- 
-       .contact-info {
-           display: inline-block;
-           background: #e0e5ec;
-           padding: 10px 20px;
-           border-radius: 10px;
-           box-shadow: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff;
-           font-size: 0.9em;
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2), inset -4px -4px 8px rgba(255,255,255,0.7);
         }
- 
-       .section-title {
-           background: linear-gradient(145deg, #f0f5fa, #cacfd6);
-           padding: 10px 20px;
-           border-radius: 10px;
-           box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
-           display: inline-block;
-           margin-bottom: 20px;
-            border:
-1px solid #fff;
+
+        .header-info h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            color: var(--text-highlight);
+            text-shadow: 2px 2px 4px var(--shadow-light), -2px -2px 4px var(--shadow-dark);
+            letter-spacing: 1px;
         }
- 
-        .card {
-           background: #e0e5ec;
-           padding: 20px;
-           border-radius: 15px;
-           margin-bottom: 25px;
-            /*
-Engraved/Debossed effect for content */
-           box-shadow: inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff;
+
+        .contact-card {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+            font-size: 0.9em;
+            line-height: 1.6;
         }
- 
-        .job-title
-{
-           font-weight: bold;
-           font-size: 1.1em;
-            color:
-#2c3e50;
+
+        /* Navigation Menu (Interactive Buttons) */
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
- 
-       .company-name {
-           font-style: italic;
-            color:
-#555;
-           margin-bottom: 10px;
+
+        .nav-btn {
+            background: var(--bg-color);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: bold;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+            outline: none;
         }
- 
-        ul {
-           padding-left: 20px;
+
+        /* Button Active / Clicked State */
+        .nav-btn.active, .nav-btn:active {
+            box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+            color: var(--accent);
         }
- 
-        li {
-           margin-bottom: 8px;
-           line-height: 1.5;
+
+        /* Content Sections */
+        .tab-content {
+            display: none; /* Hide all by default */
+            animation: fadeIn 0.4s ease-in-out;
         }
- 
-        .skills-tag
-{
-           display: inline-block;
-           background: #e0e5ec;
-           padding: 8px 15px;
-            margin:
-5px;
-           border-radius: 20px;
-           font-size: 0.85em;
-           box-shadow: 3px 3px 6px #a3b1c6, -3px -3px 6px #ffffff;
-            border:
-1px solid #f0f5fa;
+
+        .tab-content.active {
+            display: block; /* Show active */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-card {
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light);
+            line-height: 1.7;
+        }
+
+        h2 {
+            color: var(--text-highlight);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 1.3em;
+            border-bottom: 1px solid rgba(163,177,198,0.3);
+            padding-bottom: 10px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--accent);
+            margin-top: 15px;
+        }
+
+        .company-name {
+            font-style: italic;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        ul { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 8px; }
+
+        .skills-tag {
+            display: inline-block;
+            background: var(--bg-color);
+            padding: 8px 18px;
+            margin: 6px 4px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
- 
+
 <div class="container">
     
-    <div
-class="header">
-       <h1>A'ANG KURNIA, S.T.</h1>
-        <div
-class="contact-info">
-            Gg.
-Pesantren Jl. Juraganan RT 05/RW 08, Grogol Utara, Kebayoran Lama, South
-Jakarta <br>
-           +62857-1765-9289 | goankproject027@gmail.com
-       </div>
+    <!-- Profile Header -->
+    <div class="header">
+        <div class="profile-img-container">
+            <!-- Link gambar diubah ke raw github format agar terbaca web -->
+            <img src="https://raw.githubusercontent.com/Aang-hub-art/aang/main/foto-profil.png" alt="A'ang Kurnia Profile">
+        </div>
+        <div class="header-info">
+            <h1>A'ANG KURNIA, S.T.[cite: 1]</h1>
+            <div class="contact-card">
+                📍 Gg. Pesantren Jl. Juraganan RT 05/RW 08, Grogol Utara, Kebayoran Lama, South Jakarta[cite: 1] <br>
+                📱 +62857-1765-9289 | ✉️ goankproject027@gmail.com[cite: 1]
+            </div>
+        </div>
     </div>
- 
-    <div>
-        <h2
-class="section-title">PROFESSIONAL SUMMARY</h2>
-        <div
-class="card">
-           <p>Bachelor of Civil Engineering graduate from Gunadarma
-University (GPA 3.33) majoring in Transportation Engineering, with hands-on
-field experience in construction supervision, technical inspection, material
-verification (BOQ/RAB), and shop drawing drafting. Proficient in
-technical applications such as AutoCAD and Microsoft Office to support project
-management and operational efficiency. Possesses strong physical
-endurance in the field, adaptive communication skills, and a strict commitment
-to Occupational Health and Safety (OHS/K3) standards.</p>
-       </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-menu">
+        <button class="nav-btn active" onclick="openTab('summary', this)">Summary</button>
+        <button class="nav-btn" onclick="openTab('experience', this)">Work Experience</button>
+        <button class="nav-btn" onclick="openTab('education', this)">Education</button>
+        <button class="nav-btn" onclick="openTab('skills', this)">Skills & Certifications</button>
     </div>
- 
-    <div>
-        <h2
-class="section-title">WORK EXPERIENCE</h2>
- 
-        <div
-class="card">
-            <div
-class="job-title">Field Delivery Partner (2024 - Present)</div>
-            <div
-class="company-name">PT Shopee International Indonesia, Greater
-Jakarta Area</div>
-           <ul>
-               <li><strong>Route Efficiency &
-Management:</strong> Ensured daily on-time delivery performance through
-optimal route planning and consistently met high operational targets.</li>
-               <li><strong>Field Operational Resilience:</strong>
-Worked independently and reliably in outdoor environments under dynamic weather
-conditions.</li>
-               <li><strong>Safety & SOP Compliance:</strong>
-Strictly adhered to road safety standards and operational procedures to
-minimize workplace safety risks.</li>
-               <li><strong>Customer Service & Problem
-Solving:</strong> Maintained professional communication with customers
-while resolving field issues promptly.</li>
-           </ul>
-       </div>
- 
-        <div
-class="card">
-            <div
-class="job-title">Site Supervisor (Project-Based) (2024-2025)</div>
-            <div
-class="company-name">FREELANCE CONSTRUCTION SERVICES, South
-Jakarta</div>
-           <ul>
-               <li><strong>Quality Control & OHS (Lavande Apartment
-Lobby Project):</strong> Supervised stamp concrete execution in the lobby
-area, controlled material mix quality, and enforced OHS/K3 safety standards in
-high-traffic public areas.</li>
-               <li><strong>Operations & Cost Management (Jogging Track
-Project - Permata Hijau):</strong> Led site team operations, prepared
-cost estimates, managed equipment and material procurement, and controlled
-project timelines.</li>
-               <li><strong>Progress Reporting &
-Documentation:</strong> Prepared daily, weekly, and monthly progress
-reports while maintaining comprehensive project documentation.</li>
-           </ul>
-       </div>
- 
-        <div
-class="card">
-            <div
-class="job-title">Field Inspector (Project Contract) (2024-3
-Months)</div>
-            <div
-class="company-name">PT. DUTA CIPTA CONSULTINDO, East & South
-Jakarta</div>
-           <ul>
-               <li><strong>Drawing Compliance Inspection:</strong>
-Supervised physical execution on site to ensure precise alignment with approved
-shop drawings.</li>
-               <li><strong>Specification & Material
-Verification:</strong> Inspected and verified material quality and
-specification compliance for renovation projects to ensure 100% alignment with
-BOQ/RAB documents.</li>
-               <li><strong>Progress Control &
-Administration:</strong> Compiled periodic progress reports (daily,
-weekly, monthly) and managed photographic evidence for management and client reporting.</li>
-           </ul>
-       </div>
- 
-        <div
-class="card">
-            <div
-class="job-title">Surveyor & Drafter (Project Contract)
-(2023-7 Months)</div>
-            <div
-class="company-name">PT. TRI BINA BUANA, Central Jakarta</div>
-           <ul>
-               <li><strong>Field Survey & Mapping:</strong>
-Identified optimal installation points for sanitation infrastructure in
-residential areas.</li>
-               <li><strong>Technical Design & Drafting:</strong>
-Produced shop drawings and Detail Engineering Design (DED) using AutoCAD.</li>
-               <li><strong>Community Outreach:</strong> Engaged with
-local communities to socialize the technical implementation and benefits of
-sanitation systems.</li>
-           </ul>
-       </div>
- 
-        <div
-class="card">
-            <div
-class="job-title">Quality Control Engineer (Internship) (2021-3
-Months)</div>
-            <div
-class="company-name">PT. ARKINDO - PT. GALATAMA, KSO, Depok</div>
-           <ul>
-               <li><strong>Structural Quality Inspection:</strong>
-Conducted quality inspections on physical building construction to identify
-structural defects prior to subsequent construction phases.</li>
-               <li><strong>Material Testing:</strong> Verified
-specifications, quality, and quantity of incoming construction materials
-delivered to the site.</li>
-               <li><strong>QC Reporting:</strong> Prepared quality
-inspection reports and site technical documentation.</li>
-           </ul>
-       </div>
+
+    <!-- TAB 1: Summary -->
+    <div id="summary" class="tab-content active">
+        <div class="content-card">
+            <h2>Professional Summary[cite: 1]</h2>
+            <p>Bachelor of Civil Engineering graduate from Gunadarma University (GPA 3.33) majoring in Transportation Engineering, with hands-on field experience in construction supervision, technical inspection, material verification (BOQ/RAB), and shop drawing drafting.[cite: 1]</p>
+            <p>Proficient in technical applications such as AutoCAD and Microsoft Office to support project management and operational efficiency.[cite: 1]</p>
+            <p>Possesses strong physical endurance in the field, adaptive communication skills, and a strict commitment to Occupational Health and Safety (OHS/K3) standards.[cite: 1]</p>
+        </div>
     </div>
- 
-    <div>
-        <h2
-class="section-title">EDUCATION</h2>
-        <div
-class="card">
-           <strong>GUNADARMA UNIVERSITY</strong><br>
-           Bachelor of Engineering (S.T.) - Civil Engineering (2018-2023)<br>
-            Major
-& GPA: Transportation Engineering Concentration | GPA: 3.33/4.00
-       </div>
+
+    <!-- TAB 2: Experience -->
+    <div id="experience" class="tab-content">
+        <div class="content-card">
+            <h2>Work Experience[cite: 1]</h2>
+            
+            <div class="job-title">Field Delivery Partner (2024 - Present)[cite: 1]</div>
+            <div class="company-name">PT Shopee International Indonesia, Greater Jakarta Area[cite: 1]</div>
+            <ul>
+                <li><strong>Route Efficiency & Management:</strong> Ensured daily on-time delivery performance through optimal route planning and consistently met high operational targets.[cite: 1]</li>
+                <li><strong>Field Operational Resilience:</strong> Worked independently and reliably in outdoor environments under dynamic weather conditions.[cite: 1]</li>
+                <li><strong>Safety & SOP Compliance:</strong> Strictly adhered to road safety standards and operational procedures to minimize workplace safety risks.[cite: 1]</li>
+                <li><strong>Customer Service & Problem Solving:</strong> Maintained professional communication with customers while resolving field issues promptly.[cite: 1]</li>
+            </ul>
+
+            <div class="job-title">Site Supervisor (Project-Based) (2024-2025)[cite: 1]</div>
+            <div class="company-name">FREELANCE CONSTRUCTION SERVICES, South Jakarta[cite: 1]</div>
+            <ul>
+                <li><strong>Quality Control & OHS (Lavande Apartment Lobby Project):</strong> Supervised stamp concrete execution in the lobby area, controlled material mix quality, and enforced OHS/K3 safety standards in high-traffic public areas.[cite: 1]</li>
+                <li><strong>Operations & Cost Management (Jogging Track Project - Permata Hijau):</strong> Led site team operations, prepared cost estimates, managed equipment and material procurement, and controlled project timelines.[cite: 1]</li>
+                <li><strong>Progress Reporting & Documentation:</strong> Prepared daily, weekly, and monthly progress reports while maintaining comprehensive project documentation.[cite: 1]</li>
+            </ul>
+
+            <div class="job-title">Field Inspector (Project Contract) (2024-3 Months)[cite: 1]</div>
+            <div class="company-name">PT. DUTA CIPTA CONSULTINDO, East & South Jakarta[cite: 1]</div>
+            <ul>
+                <li><strong>Drawing Compliance Inspection:</strong> Supervised physical execution on site to ensure precise alignment with approved shop drawings.[cite: 1]</li>
+                <li><strong>Specification & Material Verification (Sanitation Renovation Project):</strong> Inspected and verified material quality and specification compliance for renovation projects to ensure 100% alignment with BOQ/RAB documents.[cite: 1]</li>
+                <li><strong>Progress Control & Administration:</strong> Compiled periodic progress reports (daily, weekly, monthly) and managed photographic evidence for management and client reporting.[cite: 1]</li>
+            </ul>
+
+            <div class="job-title">Surveyor & Drafter (Project Contract) (2023-7 Months)[cite: 1]</div>
+            <div class="company-name">PT. TRI BINA BUANA, Central Jakarta[cite: 1]</div>
+            <ul>
+                <li><strong>Field Survey & Mapping (Septic Tank & WWTP/IPAL Project):</strong> Identified optimal installation points for sanitation infrastructure in residential areas.[cite: 1]</li>
+                <li><strong>Technical Design & Drafting:</strong> Produced shop drawings and Detail Engineering Design (DED) using AutoCAD.[cite: 1]</li>
+                <li><strong>Community Outreach:</strong> Engaged with local communities to socialize the technical implementation and benefits of sanitation systems.[cite: 1]</li>
+            </ul>
+
+            <div class="job-title">Quality Control Engineer (Internship) (2021-3 Months)[cite: 1]</div>
+            <div class="company-name">PT. ARKINDO - PT. GALATAMA, KSO, Depok[cite: 1]</div>
+            <ul>
+                <li><strong>Structural Quality Inspection (UPNVJ Faculty of Medicine Building Project):</strong> Conducted quality inspections on physical building construction to identify structural defects prior to subsequent construction phases.[cite: 1]</li>
+                <li><strong>Material Testing:</strong> Verified specifications, quality, and quantity of incoming construction materials delivered to the site.[cite: 1]</li>
+                <li><strong>QC Reporting:</strong> Prepared quality inspection reports and site technical documentation.[cite: 1]</li>
+            </ul>
+        </div>
     </div>
- 
-    <div>
-        <h2
-class="section-title">SKILLS & CERTIFICATIONS</h2>
-        <div
-class="card">
-           <p><strong>Technical Skills / Software:</strong>
-<br>
-           <span class="skills-tag">AutoCAD</span> <span
-class="skills-tag">Microsoft Office</span> <span
-class="skills-tag">Technical Drafting</span> <span
-class="skills-tag">QC/QS</span> <span
-class="skills-tag">Cost Estimation (BOQ/RAB)</span>
-           </p>
-           <p><strong>Interpersonal Skills:</strong> <br>
-           <span class="skills-tag">Site Leadership</span>
-<span class="skills-tag">Project Supervision</span>
-<span class="skills-tag">Problem Solving</span> <span
-class="skills-tag">Adaptive Communication</span> <span
-class="skills-tag">Time Management</span> <span
-class="skills-tag">OHS/K3</span>
-           </p>
-           <p><strong>Certifications & Training:</strong>
-<br>
-            Basic
-AutoCAD Training (2023), Drainage Network Training (2021), OHS & Field
-Survey Training (2019-2020)
-           </p>
-       </div>
+
+    <!-- TAB 3: Education -->
+    <div id="education" class="tab-content">
+        <div class="content-card">
+            <h2>Education[cite: 1]</h2>
+            <div class="job-title">GUNADARMA UNIVERSITY[cite: 1]</div>
+            <div class="company-name">Bachelor of Engineering (S.T.) - Civil Engineering (2018-2023)[cite: 1]</div>
+            <p>Major & GPA: Transportation Engineering Concentration | GPA: 3.33/4.00[cite: 1]</p>
+        </div>
     </div>
- 
+
+    <!-- TAB 4: Skills -->
+    <div id="skills" class="tab-content">
+        <div class="content-card">
+            <h2>Skills & Certifications[cite: 1]</h2>
+            
+            <p><strong>Technical Skills / Software:</strong> <br>
+            <span class="skills-tag">AutoCAD</span> <span class="skills-tag">Microsoft Office</span> <span class="skills-tag">Technical Drafting</span> <span class="skills-tag">QC/QS</span> <span class="skills-tag">Cost Estimation (BOQ/RAB)</span>[cite: 1]
+            </p>
+            
+            <p><strong>Interpersonal Skills:</strong> <br>
+            <span class="skills-tag">Site Leadership</span> <span class="skills-tag">Project Supervision</span> <span class="skills-tag">Problem Solving</span> <span class="skills-tag">Adaptive Communication</span> <span class="skills-tag">Time Management</span> <span class="skills-tag">OHS/K3 Compliance</span>[cite: 1]
+            </p>
+            
+            <p><strong>Certifications & Training:</strong> <br>
+            <ul>
+                <li>Basic AutoCAD Training (2023)[cite: 1]</li>
+                <li>Drainage Network Training (2021)[cite: 1]</li>
+                <li>OHS & Field Survey Training (2019-2020)[cite: 1]</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
 </div>
- 
+
+<!-- JavaScript for Tab Logic -->
+<script>
+    function openTab(tabId, element) {
+        // Hide all tab contents
+        var contents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("active");
+        }
+        
+        // Remove 'active' class from all buttons
+        var buttons = document.getElementsByClassName("nav-btn");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("active");
+        }
+        
+        // Show the selected tab content
+        document.getElementById(tabId).classList.add("active");
+        
+        // Add 'active' class to the clicked button
+        element.classList.add("active");
+    }
+</script>
+
 </body>
 </html>
