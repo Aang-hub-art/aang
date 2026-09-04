@@ -79,8 +79,21 @@
             padding: 15px;
             border-radius: 12px;
             box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
-            font-size: 0.9em;
-            line-height: 1.6;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        /* Interactive Contact Links */
+        .contact-link {
+            text-decoration: none;
+            color: var(--text-highlight);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
         }
 
         /* Navigation Menu (Interactive Buttons) */
@@ -189,14 +202,16 @@
     <!-- Profile Header -->
     <div class="header">
         <div class="profile-img-container">
-            <!-- Link gambar diubah ke raw github format agar terbaca web -->
             <img src="https://raw.githubusercontent.com/Aang-hub-art/aang/main/foto-profil.png" alt="A'ang Kurnia Profile">
         </div>
         <div class="header-info">
-            <h1>A'ANG KURNIA, S.T.[cite: 1]</h1>
+            <h1>A'ANG KURNIA, S.T.</h1>
             <div class="contact-card">
-                📍 Gg. Pesantren Jl. Juraganan RT 05/RW 08, Grogol Utara, Kebayoran Lama, South Jakarta[cite: 1] <br>
-                📱 +62857-1765-9289 | ✉️ goankproject027@gmail.com[cite: 1]
+                📍 Gg. Pesantren Jl. Juraganan RT 05/RW 08, Grogol Utara, Kebayoran Lama, South Jakarta <br>
+                <!-- Interaktif link ke WA -->
+                <a href="https://wa.me/6285717659289" class="contact-link" target="_blank">📱 +62857-1765-9289</a> | 
+                <!-- Interaktif link ke Email -->
+                <a href="mailto:goankproject027@gmail.com" class="contact-link">✉️ goankproject027@gmail.com</a>
             </div>
         </div>
     </div>
@@ -212,57 +227,57 @@
     <!-- TAB 1: Summary -->
     <div id="summary" class="tab-content active">
         <div class="content-card">
-            <h2>Professional Summary[cite: 1]</h2>
-            <p>Bachelor of Civil Engineering graduate from Gunadarma University (GPA 3.33) majoring in Transportation Engineering, with hands-on field experience in construction supervision, technical inspection, material verification (BOQ/RAB), and shop drawing drafting.[cite: 1]</p>
-            <p>Proficient in technical applications such as AutoCAD and Microsoft Office to support project management and operational efficiency.[cite: 1]</p>
-            <p>Possesses strong physical endurance in the field, adaptive communication skills, and a strict commitment to Occupational Health and Safety (OHS/K3) standards.[cite: 1]</p>
+            <h2>Professional Summary</h2>
+            <p>Bachelor of Civil Engineering graduate from Gunadarma University (GPA 3.33) majoring in Transportation Engineering, with hands-on field experience in construction supervision, technical inspection, material verification (BOQ/RAB), and shop drawing drafting.</p>
+            <p>Proficient in technical applications such as AutoCAD and Microsoft Office to support project management and operational efficiency.</p>
+            <p>Possesses strong physical endurance in the field, adaptive communication skills, and a strict commitment to Occupational Health and Safety (OHS/K3) standards.</p>
         </div>
     </div>
 
     <!-- TAB 2: Experience -->
     <div id="experience" class="tab-content">
         <div class="content-card">
-            <h2>Work Experience[cite: 1]</h2>
+            <h2>Work Experience</h2>
             
-            <div class="job-title">Field Delivery Partner (2024 - Present)[cite: 1]</div>
-            <div class="company-name">PT Shopee International Indonesia, Greater Jakarta Area[cite: 1]</div>
+            <div class="job-title">Field Delivery Partner (2024 - Present)</div>
+            <div class="company-name">PT Shopee International Indonesia, Greater Jakarta Area</div>
             <ul>
-                <li><strong>Route Efficiency & Management:</strong> Ensured daily on-time delivery performance through optimal route planning and consistently met high operational targets.[cite: 1]</li>
-                <li><strong>Field Operational Resilience:</strong> Worked independently and reliably in outdoor environments under dynamic weather conditions.[cite: 1]</li>
-                <li><strong>Safety & SOP Compliance:</strong> Strictly adhered to road safety standards and operational procedures to minimize workplace safety risks.[cite: 1]</li>
-                <li><strong>Customer Service & Problem Solving:</strong> Maintained professional communication with customers while resolving field issues promptly.[cite: 1]</li>
+                <li><strong>Route Efficiency & Management:</strong> Ensured daily on-time delivery performance through optimal route planning and consistently met high operational targets.</li>
+                <li><strong>Field Operational Resilience:</strong> Worked independently and reliably in outdoor environments under dynamic weather conditions.</li>
+                <li><strong>Safety & SOP Compliance:</strong> Strictly adhered to road safety standards and operational procedures to minimize workplace safety risks.</li>
+                <li><strong>Customer Service & Problem Solving:</strong> Maintained professional communication with customers while resolving field issues promptly.</li>
             </ul>
 
-            <div class="job-title">Site Supervisor (Project-Based) (2024-2025)[cite: 1]</div>
-            <div class="company-name">FREELANCE CONSTRUCTION SERVICES, South Jakarta[cite: 1]</div>
+            <div class="job-title">Site Supervisor (Project-Based) (2024-2025)</div>
+            <div class="company-name">FREELANCE CONSTRUCTION SERVICES, South Jakarta</div>
             <ul>
-                <li><strong>Quality Control & OHS (Lavande Apartment Lobby Project):</strong> Supervised stamp concrete execution in the lobby area, controlled material mix quality, and enforced OHS/K3 safety standards in high-traffic public areas.[cite: 1]</li>
-                <li><strong>Operations & Cost Management (Jogging Track Project - Permata Hijau):</strong> Led site team operations, prepared cost estimates, managed equipment and material procurement, and controlled project timelines.[cite: 1]</li>
-                <li><strong>Progress Reporting & Documentation:</strong> Prepared daily, weekly, and monthly progress reports while maintaining comprehensive project documentation.[cite: 1]</li>
+                <li><strong>Quality Control & OHS (Lavande Apartment Lobby Project):</strong> Supervised stamp concrete execution in the lobby area, controlled material mix quality, and enforced OHS/K3 safety standards in high-traffic public areas.</li>
+                <li><strong>Operations & Cost Management (Jogging Track Project - Permata Hijau):</strong> Led site team operations, prepared cost estimates, managed equipment and material procurement, and controlled project timelines.</li>
+                <li><strong>Progress Reporting & Documentation:</strong> Prepared daily, weekly, and monthly progress reports while maintaining comprehensive project documentation.</li>
             </ul>
 
-            <div class="job-title">Field Inspector (Project Contract) (2024-3 Months)[cite: 1]</div>
-            <div class="company-name">PT. DUTA CIPTA CONSULTINDO, East & South Jakarta[cite: 1]</div>
+            <div class="job-title">Field Inspector (Project Contract) (2024-3 Months)</div>
+            <div class="company-name">PT. DUTA CIPTA CONSULTINDO, East & South Jakarta</div>
             <ul>
-                <li><strong>Drawing Compliance Inspection:</strong> Supervised physical execution on site to ensure precise alignment with approved shop drawings.[cite: 1]</li>
-                <li><strong>Specification & Material Verification (Sanitation Renovation Project):</strong> Inspected and verified material quality and specification compliance for renovation projects to ensure 100% alignment with BOQ/RAB documents.[cite: 1]</li>
-                <li><strong>Progress Control & Administration:</strong> Compiled periodic progress reports (daily, weekly, monthly) and managed photographic evidence for management and client reporting.[cite: 1]</li>
+                <li><strong>Drawing Compliance Inspection:</strong> Supervised physical execution on site to ensure precise alignment with approved shop drawings.</li>
+                <li><strong>Specification & Material Verification (Sanitation Renovation Project):</strong> Inspected and verified material quality and specification compliance for renovation projects to ensure 100% alignment with BOQ/RAB documents.</li>
+                <li><strong>Progress Control & Administration:</strong> Compiled periodic progress reports (daily, weekly, monthly) and managed photographic evidence for management and client reporting.</li>
             </ul>
 
-            <div class="job-title">Surveyor & Drafter (Project Contract) (2023-7 Months)[cite: 1]</div>
-            <div class="company-name">PT. TRI BINA BUANA, Central Jakarta[cite: 1]</div>
+            <div class="job-title">Surveyor & Drafter (Project Contract) (2023-7 Months)</div>
+            <div class="company-name">PT. TRI BINA BUANA, Central Jakarta</div>
             <ul>
-                <li><strong>Field Survey & Mapping (Septic Tank & WWTP/IPAL Project):</strong> Identified optimal installation points for sanitation infrastructure in residential areas.[cite: 1]</li>
-                <li><strong>Technical Design & Drafting:</strong> Produced shop drawings and Detail Engineering Design (DED) using AutoCAD.[cite: 1]</li>
-                <li><strong>Community Outreach:</strong> Engaged with local communities to socialize the technical implementation and benefits of sanitation systems.[cite: 1]</li>
+                <li><strong>Field Survey & Mapping (Septic Tank & WWTP/IPAL Project):</strong> Identified optimal installation points for sanitation infrastructure in residential areas.</li>
+                <li><strong>Technical Design & Drafting:</strong> Produced shop drawings and Detail Engineering Design (DED) using AutoCAD.</li>
+                <li><strong>Community Outreach:</strong> Engaged with local communities to socialize the technical implementation and benefits of sanitation systems.</li>
             </ul>
 
-            <div class="job-title">Quality Control Engineer (Internship) (2021-3 Months)[cite: 1]</div>
-            <div class="company-name">PT. ARKINDO - PT. GALATAMA, KSO, Depok[cite: 1]</div>
+            <div class="job-title">Quality Control Engineer (Internship) (2021-3 Months)</div>
+            <div class="company-name">PT. ARKINDO - PT. GALATAMA, KSO, Depok</div>
             <ul>
-                <li><strong>Structural Quality Inspection (UPNVJ Faculty of Medicine Building Project):</strong> Conducted quality inspections on physical building construction to identify structural defects prior to subsequent construction phases.[cite: 1]</li>
-                <li><strong>Material Testing:</strong> Verified specifications, quality, and quantity of incoming construction materials delivered to the site.[cite: 1]</li>
-                <li><strong>QC Reporting:</strong> Prepared quality inspection reports and site technical documentation.[cite: 1]</li>
+                <li><strong>Structural Quality Inspection (UPNVJ Faculty of Medicine Building Project):</strong> Conducted quality inspections on physical building construction to identify structural defects prior to subsequent construction phases.</li>
+                <li><strong>Material Testing:</strong> Verified specifications, quality, and quantity of incoming construction materials delivered to the site.</li>
+                <li><strong>QC Reporting:</strong> Prepared quality inspection reports and site technical documentation.</li>
             </ul>
         </div>
     </div>
@@ -270,31 +285,31 @@
     <!-- TAB 3: Education -->
     <div id="education" class="tab-content">
         <div class="content-card">
-            <h2>Education[cite: 1]</h2>
-            <div class="job-title">GUNADARMA UNIVERSITY[cite: 1]</div>
-            <div class="company-name">Bachelor of Engineering (S.T.) - Civil Engineering (2018-2023)[cite: 1]</div>
-            <p>Major & GPA: Transportation Engineering Concentration | GPA: 3.33/4.00[cite: 1]</p>
+            <h2>Education</h2>
+            <div class="job-title">GUNADARMA UNIVERSITY</div>
+            <div class="company-name">Bachelor of Engineering (S.T.) - Civil Engineering (2018-2023)</div>
+            <p>Major & GPA: Transportation Engineering Concentration | GPA: 3.33/4.00</p>
         </div>
     </div>
 
     <!-- TAB 4: Skills -->
     <div id="skills" class="tab-content">
         <div class="content-card">
-            <h2>Skills & Certifications[cite: 1]</h2>
+            <h2>Skills & Certifications</h2>
             
             <p><strong>Technical Skills / Software:</strong> <br>
-            <span class="skills-tag">AutoCAD</span> <span class="skills-tag">Microsoft Office</span> <span class="skills-tag">Technical Drafting</span> <span class="skills-tag">QC/QS</span> <span class="skills-tag">Cost Estimation (BOQ/RAB)</span>[cite: 1]
+            <span class="skills-tag">AutoCAD</span> <span class="skills-tag">Microsoft Office</span> <span class="skills-tag">Technical Drafting</span> <span class="skills-tag">QC/QS</span> <span class="skills-tag">Cost Estimation (BOQ/RAB)</span>
             </p>
             
             <p><strong>Interpersonal Skills:</strong> <br>
-            <span class="skills-tag">Site Leadership</span> <span class="skills-tag">Project Supervision</span> <span class="skills-tag">Problem Solving</span> <span class="skills-tag">Adaptive Communication</span> <span class="skills-tag">Time Management</span> <span class="skills-tag">OHS/K3 Compliance</span>[cite: 1]
+            <span class="skills-tag">Site Leadership</span> <span class="skills-tag">Project Supervision</span> <span class="skills-tag">Problem Solving</span> <span class="skills-tag">Adaptive Communication</span> <span class="skills-tag">Time Management</span> <span class="skills-tag">OHS/K3 Compliance</span>
             </p>
             
             <p><strong>Certifications & Training:</strong> <br>
             <ul>
-                <li>Basic AutoCAD Training (2023)[cite: 1]</li>
-                <li>Drainage Network Training (2021)[cite: 1]</li>
-                <li>OHS & Field Survey Training (2019-2020)[cite: 1]</li>
+                <li>Basic AutoCAD Training (2023)</li>
+                <li>Drainage Network Training (2021)</li>
+                <li>OHS & Field Survey Training (2019-2020)</li>
             </ul>
             </p>
         </div>
