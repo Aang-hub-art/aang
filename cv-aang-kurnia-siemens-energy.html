@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ATS-friendly civil engineering CV for civil and structural EPC project roles.">
+  <title>A'ang Kurnia, S.T. | Civil Engineer CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #1d2925; --green: #285b48; --muted: #58635d; --line: #cfd5ce; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: linear-gradient(135deg, #dce5df, #eef1eb 52%, #d7e1dc); color: var(--ink); font: 10pt/1.42 "DM Sans", "Segoe UI", sans-serif; }
+    .toolbar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: center; gap: 10px; padding: 12px; background: rgba(24, 43, 36, .94); backdrop-filter: blur(16px); }
+    .toolbar a, .toolbar button { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; gap: 7px; padding: 0 14px; border: 1px solid rgba(255, 255, 255, .28); border-radius: 7px; background: #d8ed6a; color: var(--ink); font: 700 9pt "DM Sans", sans-serif; text-decoration: none; cursor: pointer; }
+    .toolbar a { background: transparent; color: white; }
+    .page { width: min(210mm, calc(100% - 32px)); min-height: 297mm; margin: 24px auto; padding: 15mm 16mm; border: 1px solid #e0e6df; border-radius: 4px; background: #fff; box-shadow: 0 18px 55px rgba(29, 41, 37, .16); }
+    .resume-header { display: grid; grid-template-columns: minmax(0, 1fr) 31mm; align-items: center; gap: 18px; margin-bottom: 14px; padding: 16px 18px; border: 0; border-radius: 6px; background: linear-gradient(120deg, #204b3b, #36715a); color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .resume-header h1 { margin: 0; color: #fff; font: 700 25pt/1.08 "Roboto Slab", Georgia, serif; }
+    .resume-header .target { margin: 5px 0 9px; color: #eaf1e9; font-size: 9pt; font-weight: 700; }
+    .cv-photo { display: block; width: 29mm; height: 36mm; border: 2px solid rgba(255, 255, 255, .78); border-radius: 4px; background: #d9dfd9; object-fit: cover; object-position: center 24%; }
+    .contact { display: flex; flex-wrap: wrap; gap: 4px 12px; color: #f1f5f1; font-size: 8.5pt; }
+    .contact a { color: inherit; text-decoration: none; }
+    section { margin-top: 13px; }
+    h2 { margin: 0 0 7px; padding-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--green); font-size: 10.5pt; letter-spacing: .04em; text-transform: uppercase; }
+    p { margin: 0; }
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 20px; }
+    .skills p { padding-left: 11px; position: relative; }
+    .skills p::before { position: absolute; left: 0; color: var(--green); content: "•"; }
+    .job { margin-top: 9px; break-inside: avoid; }
+    .job-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .job h3 { margin: 0; font-size: 10pt; }
+    .date { flex: 0 0 auto; color: var(--green); font-size: 8.8pt; font-weight: 700; }
+    .company { margin: 1px 0 4px; color: var(--muted); font-size: 9pt; }
+    ul { margin: 3px 0 0; padding-left: 17px; }
+    li { margin: 2px 0; }
+    .cert-list { columns: 2; column-gap: 25px; margin-bottom: 5px; }
+    .cert-list li { break-inside: avoid; }
+    .small { color: var(--muted); font-size: 8.5pt; }
+    @media (max-width: 650px) {
+      body { font-size: 10pt; }
+      .page { width: 100%; min-height: 0; margin: 0; padding: 20px 16px; border: 0; border-radius: 0; box-shadow: none; }
+      .resume-header { grid-template-columns: minmax(0, 1fr) 26mm; gap: 12px; padding: 15px; }
+      .resume-header h1 { font-size: 22pt; }
+      .cv-photo { width: 25mm; height: 32mm; }
+      .skills { grid-template-columns: 1fr; }
+      .job-head { align-items: flex-start; flex-direction: column; gap: 0; }
+    }
+    @page { size: A4; margin: 13mm; }
+    @media print {
+      body { background: #fff; font-size: 9pt; }
+      .toolbar { display: none; }
+      .page { width: auto; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+      .resume-header { margin-bottom: 11px; padding: 12px 14px; }
+      .resume-header h1 { font-size: 23pt; }
+      section { margin-top: 9px; }
+      .job { margin-top: 6px; }
+      h2 { margin-bottom: 5px; padding-bottom: 3px; font-size: 9.5pt; }
+      li { margin: 1px 0; }
+    }
+
+    :root { --ink: #171a3c; --green: #425bd6; --muted: #526078; --line: rgba(81, 100, 152, .2); --coral: #ff9e63; --cyan: #62dce3; }
+    body {
+      background-color: #141735;
+      background-image:
+        linear-gradient(117deg, transparent 0 12%, rgba(244, 80, 139, .34) 13% 22%, transparent 23% 40%, rgba(71, 208, 221, .19) 41% 48%, transparent 49%),
+        linear-gradient(28deg, transparent 0 32%, rgba(255, 176, 63, .34) 33% 41%, transparent 42% 69%, rgba(97, 91, 218, .3) 70% 78%, transparent 79%),
+        linear-gradient(145deg, #121532 0%, #202858 53%, #142644 100%);
+      color: var(--ink);
+      font-size: 9.7pt;
+      line-height: 1.36;
+    }
+    .toolbar { border-bottom: 1px solid rgba(255, 255, 255, .18); background: rgba(13, 17, 48, .72); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+    .toolbar a, .toolbar button { border-radius: 7px; background: rgba(255, 255, 255, .13); color: #fff; }
+    .toolbar button { border-color: rgba(98, 220, 227, .62); background: linear-gradient(115deg, #62dce3, #ffb465); color: #171a3c; }
+    .toolbar a:hover, .toolbar button:hover { transform: translateY(-1px); }
+    .page {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .5);
+      border-radius: 10px;
+      background: rgba(246, 248, 255, .9);
+      box-shadow: 0 22px 70px rgba(4, 7, 30, .38), inset 0 1px rgba(255, 255, 255, .9);
+      -webkit-backdrop-filter: blur(28px) saturate(1.2);
+      backdrop-filter: blur(28px) saturate(1.2);
+    }
+    .document-bar {
+      display: flex;
+      height: 30px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: -15mm -16mm 11px;
+      padding: 0 16px;
+      border-bottom: 1px solid rgba(76, 93, 150, .13);
+      background: rgba(255, 255, 255, .58);
+      color: #58647a;
+      font-size: 7.5pt;
+      font-weight: 600;
+    }
+    .document-controls { display: flex; gap: 5px; }
+    .document-controls span { width: 8px; height: 8px; border-radius: 50%; }
+    .document-controls span:nth-child(1) { background: #ff625a; }
+    .document-controls span:nth-child(2) { background: #ffbf45; }
+    .document-controls span:nth-child(3) { background: #31c95d; }
+    .resume-header {
+      position: relative;
+      grid-template-columns: minmax(0, 1fr) 31mm;
+      margin-bottom: 11px;
+      border: 1px solid rgba(255, 255, 255, .38);
+      border-radius: 8px;
+      background: linear-gradient(118deg, #15183f 0%, #353c88 57%, #a93670 100%);
+      box-shadow: inset 0 1px rgba(255, 255, 255, .28), 0 8px 22px rgba(29, 31, 81, .16);
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    .resume-header h1 { font-size: 24pt; }
+    .resume-header .target { color: #fce3a1; letter-spacing: .07em; }
+    .resume-header .target:first-child { color: var(--cyan); }
+    .cv-photo { width: 29mm; height: 36mm; border: 2px solid rgba(255, 255, 255, .86); border-radius: 7px; box-shadow: 0 8px 22px rgba(5, 8, 34, .32); }
+    .contact { color: rgba(255, 255, 255, .9); }
+    section { margin-top: 9px; padding: 10px 12px; border: 1px solid rgba(255, 255, 255, .82); border-radius: 7px; background: rgba(255, 255, 255, .57); box-shadow: inset 0 1px rgba(255, 255, 255, .88), 0 3px 10px rgba(44, 57, 105, .035); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+    h2 { position: relative; padding-left: 11px; border-bottom-color: rgba(81, 100, 152, .18); color: #3348a7; font-size: 9.8pt; }
+    h2::before { position: absolute; top: 1px; bottom: 8px; left: 0; width: 3px; border-radius: 2px; background: linear-gradient(#62dce3, #ff9e63); content: ""; }
+    .skills { gap: 5px 8px; }
+    .skills p { min-height: 25px; padding: 4px 7px 4px 16px; border: 1px solid rgba(86, 107, 169, .14); border-radius: 5px; background: rgba(255, 255, 255, .56); color: #35425c; font-size: 8.3pt; }
+    .skills p::before { left: 6px; color: #e68364; }
+    .job { margin-top: 6px; padding: 7px 9px; border: 1px solid rgba(255, 255, 255, .86); border-left: 2px solid #62cfd9; border-radius: 5px; background: rgba(255, 255, 255, .56); break-inside: avoid; }
+    .job h3 { color: #20294f; font-size: 9.2pt; }
+    .date { color: #bf654d; font-size: 8pt; }
+    .company { color: #59657a; font-size: 8.4pt; }
+    .job li { color: #303c55; font-size: 8.5pt; }
+    .cert-list { column-gap: 18px; }
+    .cert-list li { color: #38455f; font-size: 8.3pt; }
+    .small { color: #657187; font-size: 8pt; }
+    .education-row h3 { color: #20294f; font-size: 9.2pt; }
+    @media (max-width: 650px) {
+      .page { width: 100%; padding: 20px 16px; }
+      .document-bar { margin: -20px -16px 14px; }
+      .resume-header { grid-template-columns: minmax(0, 1fr) 26mm; }
+      section { padding: 10px; }
+    }
+    @page { size: A4; margin: 12mm; }
+    @media print {
+      body { background: #fff; color: #171a3c; font-size: 8.7pt; line-height: 1.32; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar, .document-bar { display: none; }
+      .page { overflow: visible; border: 0; border-radius: 0; background: #fff; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+      .resume-header { margin-bottom: 9px; padding: 10px 12px; border: 0; border-radius: 5px; }
+      .resume-header h1 { font-size: 22pt; }
+      .cv-photo { width: 27mm; height: 34mm; }
+      section { margin-top: 7px; padding: 7px 9px; border: 1px solid #e0e4ef; border-radius: 4px; background: #fff; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; break-inside: avoid; }
+      h2 { margin-bottom: 4px; padding-bottom: 3px; font-size: 9pt; }
+      .job { margin-top: 5px; padding: 5px 7px; border-color: #e0e4ef; border-left-color: #54bdcb; border-radius: 3px; background: #fbfcff; }
+      .job h3 { font-size: 8.8pt; }
+      .company, .job li, .skills p, .cert-list li { font-size: 8pt; }
+      .skills p { min-height: 0; padding-block: 2px; }
+      li { margin: 1px 0; }
+    }
+
+    body { background: #e9ebef; color: #24252a; font: 8.25pt/1.28 "DM Sans", "Segoe UI", sans-serif; }
+    .toolbar { background: #202126; }
+    .toolbar a, .toolbar button { min-height: 36px; border-radius: 4px; background: #fff; color: #22242a; }
+    .toolbar button { background: #edc66f; }
+    .page { display: grid; width: min(210mm, calc(100% - 28px)); min-height: 297mm; grid-template-columns: 57mm minmax(0, 1fr); margin: 22px auto; padding: 0; overflow: hidden; border: 0; border-radius: 3px; background: #fff; box-shadow: 0 16px 48px rgba(22, 25, 35, .2); }
+    .sidebar { min-width: 0; padding: 10mm 7mm 8mm; background: #222329; color: #f6f6f7; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .sidebar-photo { display: block; width: 34mm; height: 34mm; margin: 0 auto 7mm; border: 2px solid rgba(255, 255, 255, .58); border-radius: 50%; background: #85878b; object-fit: cover; object-position: center 23%; }
+    .sidebar-section { margin-top: 6mm; }
+    .sidebar-heading { margin: 0 0 2.5mm; padding-bottom: 1.5mm; border-bottom: 1px solid rgba(255, 255, 255, .28); color: #fff; font-size: 9pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .sidebar-list { display: grid; gap: 1.7mm; margin: 0; padding: 0; list-style: none; }
+    .sidebar-list li { position: relative; padding-left: 3.2mm; color: rgba(255, 255, 255, .84); font-size: 7.7pt; line-height: 1.27; }
+    .sidebar-list li::before { position: absolute; top: .48em; left: 0; width: 1.3mm; height: 1.3mm; border-radius: 50%; background: #dfb95f; content: ""; }
+    .sidebar-contact { display: grid; gap: 2.6mm; }
+    .sidebar-contact div { display: grid; grid-template-columns: 6mm minmax(0, 1fr); align-items: start; gap: 2mm; color: rgba(255, 255, 255, .87); font-size: 7.6pt; overflow-wrap: anywhere; }
+    .contact-mark { display: grid; width: 5mm; height: 5mm; place-items: center; border: 1px solid rgba(255, 255, 255, .8); border-radius: 50%; color: #fff; font-size: 6pt; font-weight: 700; }
+    .sidebar a { color: inherit; text-decoration: none; }
+    .software-tags { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+    .software-tag { padding: 1mm 1.8mm; border: 1px solid rgba(255, 255, 255, .26); border-radius: 2mm; color: rgba(255, 255, 255, .9); font-size: 7.2pt; }
+    .main-column { min-width: 0; }
+    .resume-header { display: block; min-height: 43mm; margin: 0; padding: 11mm 9mm 7mm; border: 0; border-radius: 0; background: linear-gradient(115deg, #727478, #55575b); color: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .resume-header .target { margin: 0 0 2mm; color: #f1d281; font-size: 8pt; font-weight: 700; letter-spacing: .1em; }
+    .resume-header h1 { margin: 0 0 1mm; color: #fff; font: 700 23pt/1.05 "Roboto Slab", Georgia, serif; }
+    .resume-header .role { margin: 0 0 3mm; color: rgba(255, 255, 255, .88); font-size: 10pt; font-weight: 600; letter-spacing: .06em; }
+    .main-content { padding: 7mm 8.5mm 7mm; }
+    section { margin: 0 0 4mm; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; break-inside: auto; }
+    .main-section-title { display: flex; width: fit-content; min-width: 43mm; align-items: center; gap: 2mm; margin: 0 0 2.5mm; padding: 1.6mm 3mm; border: 0; border-radius: 1mm 4mm 4mm 1mm; background: #24252a; color: #fff; font-size: 8.6pt; letter-spacing: .06em; text-transform: uppercase; }
+    .title-mark { display: grid; width: 4.3mm; height: 4.3mm; place-items: center; border: 1px solid rgba(255, 255, 255, .82); border-radius: 50%; color: #f1d281; font-size: 6pt; }
+    .summary { margin: 0; color: #44464c; font-size: 8pt; line-height: 1.34; text-align: justify; }
+    .education-item { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .education-item h3, .job h3 { margin: 0; color: #24252a; font-size: 8.4pt; font-weight: 700; }
+    .education-item p, .company { margin: .7mm 0 0; color: #62656b; font-size: 7.7pt; }
+    .date { flex: 0 0 auto; color: #77797e; font-size: 7.4pt; font-weight: 700; }
+    .job { position: relative; margin: 0 0 2.5mm; padding: 0 0 0 3mm; border: 0; border-left: 1px solid #c8c9cb; border-radius: 0; background: transparent; break-inside: avoid; }
+    .job::before { position: absolute; top: 1mm; left: -1.05mm; width: 1.7mm; height: 1.7mm; border: 1px solid white; border-radius: 50%; background: #c9a750; box-shadow: 0 0 0 1px #c9a750; content: ""; }
+    .job-head { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+    .company { margin: .5mm 0 .8mm; }
+    .job ul { display: grid; gap: .6mm; margin: 0; padding-left: 3.3mm; }
+    .job li { margin: 0; color: #41434a; font-size: 7.55pt; line-height: 1.26; }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8mm 4mm; margin: 0; padding-left: 3mm; }
+    .cert-grid li { margin: 0; color: #4b4d53; font-size: 7.35pt; line-height: 1.24; }
+    .additional-label { margin: 2mm 0 1.4mm; color: #73757b; font-size: 7.3pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .small { margin-top: 1.5mm; color: #77797e; font-size: 7pt; }
+    @media (max-width: 650px) {
+      .page { width: 100%; min-height: 0; grid-template-columns: 1fr; margin: 0; }
+      .sidebar { display: grid; grid-template-columns: 78px minmax(0, 1fr); align-items: start; gap: 0 18px; padding: 20px; }
+      .sidebar-photo { width: 68px; height: 68px; grid-row: span 2; margin: 0; }
+      .sidebar-section { margin-top: 17px; }
+      .resume-header { min-height: 0; padding: 26px 22px; }
+      .main-content { padding: 20px 22px; }
+      .sidebar-list li, .sidebar-contact div { font-size: 8pt; }
+      .job-head { align-items: flex-start; }
+    }
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { width: 210mm; height: 297mm; margin: 0; background: #fff; font-size: 8pt; line-height: 1.26; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar { display: none; }
+      .page { width: 210mm; height: 297mm; min-height: 297mm; grid-template-columns: 57mm minmax(0, 1fr); margin: 0; padding: 0; overflow: hidden; border: 0; border-radius: 0; box-shadow: none; }
+      .sidebar { display: block; padding: 9mm 6.5mm; background: #222329 !important; }
+      .sidebar-photo { width: 33mm; height: 33mm; margin: 0 auto 6mm; }
+      .sidebar-section { margin-top: 5mm; }
+      .sidebar-list { gap: 1.35mm; }
+      .sidebar-list li, .sidebar-contact div { font-size: 7.4pt; }
+      .sidebar-heading { font-size: 8.5pt; }
+      .resume-header { min-height: 40mm; padding: 10mm 8mm 6mm; background: #5d5f64 !important; }
+      .resume-header h1 { font-size: 21pt; }
+      .main-content { padding: 6mm 7.5mm 6mm; }
+      section { margin-bottom: 3.1mm; break-inside: auto; }
+      .main-section-title { margin-bottom: 1.8mm; font-size: 8.2pt; }
+      .summary { font-size: 7.7pt; line-height: 1.27; }
+      .job { margin-bottom: 1.9mm; break-inside: avoid; }
+      .job h3, .education-item h3 { font-size: 8pt; }
+      .job li { font-size: 7.25pt; line-height: 1.2; }
+      .company, .education-item p, .date { font-size: 7pt; }
+      .cert-grid li { font-size: 6.9pt; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><a href="index.html">Back to portfolio</a><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
+  <main class="page">
+    <aside class="sidebar">
+      <img class="sidebar-photo" src="foto-profil.png" alt="Professional portrait of A'ang Kurnia">
+      <section class="sidebar-section">
+        <h2 class="sidebar-heading">Contact</h2>
+        <div class="sidebar-contact">
+          <div><span class="contact-mark">L</span><span>South Jakarta, Indonesia</span></div>
+          <div><span class="contact-mark">P</span><a href="tel:+6285281080925">+62 852-8108-0925</a></div>
+          <div><span class="contact-mark">E</span><a href="mailto:goankproject027@gmail.com">goankproject027@gmail.com</a></div>
+        </div>
+      </section>
+      <section class="sidebar-section">
+        <h2 class="sidebar-heading">Core Skills</h2>
+        <ul class="sidebar-list">
+          <li>Civil and structural site supervision</li>
+          <li>Shop drawings and method statements</li>
+          <li>Quality inspection and defect identification</li>
+          <li>Material and quantity verification / BOQ-RAB</li>
+          <li>Cost estimation and procurement coordination</li>
+          <li>Site progress and photo reporting</li>
+          <li>OHS / K3 compliance and field safety</li>
+          <li>Site leadership and field problem-solving</li>
+          <li>Adaptive communication and time management</li>
+        </ul>
+      </section>
+      <section class="sidebar-section">
+        <h2 class="sidebar-heading">Software</h2>
+        <div class="software-tags"><span class="software-tag">AutoCAD</span><span class="software-tag">Microsoft Office</span><span class="software-tag">Microsoft Project</span><span class="software-tag">DED / Technical Drafting</span></div>
+      </section>
+    </aside>
+
+    <div class="main-column">
+      <header class="resume-header">
+        <p class="target">CIVIL ENGINEER / EPC PROJECT SUPPORT</p>
+        <h1>A'ANG KURNIA, S.T.</h1>
+        <p class="role">CIVIL &amp; STRUCTURAL SITE SUPERVISION</p>
+      </header>
+      <div class="main-content">
+        <section>
+          <h2 class="main-section-title"><span class="title-mark">P</span>Profile</h2>
+          <p class="summary">Civil Engineering graduate from Gunadarma University (GPA 3.33/4.00), with field experience in civil and structural site supervision, quality inspection, drawing compliance, material and quantity verification, and project reporting. Familiar with shop drawings, method statements, BOQ/RAB review, AutoCAD drafting, and OHS/K3 requirements. Brings a practical, safety-conscious approach to coordination and site problem-solving, with transferable skills for EPC civil and structural work packages.</p>
+        </section>
+
+        <section>
+          <h2 class="main-section-title"><span class="title-mark">E</span>Education</h2>
+          <div class="education-item"><div><h3>Gunadarma University / Bachelor of Engineering (S.T.), Civil Engineering</h3><p>Transportation Engineering concentration / GPA 3.33 out of 4.00</p></div><span class="date">2018 - 2023</span></div>
+        </section>
+
+        <section>
+          <h2 class="main-section-title"><span class="title-mark">W</span>Experience</h2>
+          <article class="job">
+            <div class="job-head"><h3>Site Supervisor / Project-Based</h3><span class="date">2024 - 2025</span></div>
+            <p class="company">Freelance Construction Services / South Jakarta</p>
+            <ul><li>Supervised stamp-concrete work at the Lavande Apartment lobby, checked material-mix quality, and enforced OHS/K3 controls in a high-traffic public area.</li><li>Led Permata Hijau jogging-track site operations, prepared cost estimates, coordinated equipment and material procurement, and monitored timelines.</li><li>Prepared daily, weekly, and monthly progress reports and maintained project documentation.</li></ul>
+          </article>
+          <article class="job">
+            <div class="job-head"><h3>Field Inspector / Project Contract</h3><span class="date">2024 / 3 months</span></div>
+            <p class="company">PT Duta Cipta Consultindo / East &amp; South Jakarta</p>
+            <ul><li>Inspected site execution against approved shop drawings and verified material quality and specification compliance against BOQ/RAB for sanitation renovation work.</li><li>Compiled periodic progress reports and photographic evidence for management and client reporting.</li></ul>
+          </article>
+          <article class="job">
+            <div class="job-head"><h3>Surveyor &amp; Drafter / Project Contract</h3><span class="date">2023 / 7 months</span></div>
+            <p class="company">PT Tri Bina Buana / Central Jakarta</p>
+            <ul><li>Surveyed proposed septic tank and WWTP/IPAL installation points in residential areas.</li><li>Produced shop drawings and Detail Engineering Design (DED) using AutoCAD and communicated implementation plans to local communities.</li></ul>
+          </article>
+          <article class="job">
+            <div class="job-head"><h3>Quality Control Engineer / Internship</h3><span class="date">2021 / 3 months</span></div>
+            <p class="company">PT Arkindo - PT Galatama, KSO / Depok</p>
+            <ul><li>Inspected the UPNVJ Faculty of Medicine building project, identifying structural defects before subsequent construction phases.</li><li>Verified incoming material specifications, quality, and quantity; prepared inspection reports and technical site documentation.</li></ul>
+          </article>
+          <article class="job">
+            <div class="job-head"><h3>Field Delivery Partner / Additional Field Experience</h3><span class="date">2024 - Present</span></div>
+            <p class="company">PT Shopee International Indonesia / Greater Jakarta Area</p>
+            <ul><li>Plan efficient daily routes, meet operational targets, and work reliably in changing outdoor conditions.</li><li>Follow road-safety standards and operating procedures; resolve field issues with professional customer communication.</li></ul>
+          </article>
+        </section>
+
+        <section>
+          <h2 class="main-section-title"><span class="title-mark">C</span>Certifications &amp; Training</h2>
+          <ul class="cert-grid"><li>Basic AutoCAD Training (2023)</li><li>Drainage Network Training (2021)</li><li>OHS &amp; Field Survey Training (2019-2020)</li><li>Planning a Drainage Network System</li><li>Analysis of Planning Area</li><li>Network Survey and Field Investigation</li><li>Communication at Work and Preparatory Work</li><li>Detail Design of the Drainage Network</li><li>Managing Projects with Microsoft Project</li><li>Prakerja Certificate</li></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
