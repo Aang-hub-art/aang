@@ -512,6 +512,7 @@
     }
     @media (max-width: 390px) {
       body { padding-inline: 6px; }
+      .app-window { width: calc(100vw - 34px); max-width: calc(100vw - 34px); }
       .window-title { max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
       .window-controls { gap: 6px; }
       .window-control { width: 12px; height: 12px; }
@@ -535,6 +536,156 @@
       h2 { font-size: 2.8rem; }
       .contact-band h2 { font-size: 2.6rem; }
       .mobile-break { display: block; }
+    }
+
+    body {
+      background-color: #11142f;
+      background-image:
+        linear-gradient(117deg, transparent 0 11%, rgba(248, 88, 142, .3) 12% 21%, transparent 22% 39%, rgba(64, 204, 220, .18) 40% 47%, transparent 48%),
+        linear-gradient(28deg, transparent 0 31%, rgba(255, 181, 58, .36) 32% 40%, transparent 41% 68%, rgba(114, 91, 214, .32) 69% 77%, transparent 78%),
+        linear-gradient(145deg, #131638 0%, #1d2458 44%, #142746 100%);
+      background-attachment: fixed;
+    }
+    .app-window {
+      width: min(1320px, 100%);
+      max-height: calc(100vh - 112px);
+      border: 1px solid rgba(255, 255, 255, .32);
+      border-radius: 20px;
+      background: rgba(22, 24, 54, .46);
+      box-shadow: 0 28px 100px rgba(3, 6, 26, .52), inset 0 1px rgba(255, 255, 255, .24);
+      -webkit-backdrop-filter: blur(30px) saturate(1.35);
+      backdrop-filter: blur(30px) saturate(1.35);
+    }
+    .app-window > :not(.window-titlebar):not(.spotlight-interface) { display: none !important; }
+    .window-titlebar { border-color: rgba(255, 255, 255, .2); background: rgba(255, 255, 255, .12); }
+    .window-title { color: rgba(255, 255, 255, .78); }
+    .window-download { border-color: rgba(255, 255, 255, .28); background: rgba(255, 255, 255, .12); color: white; }
+    .window-download:hover { border-color: rgba(255, 255, 255, .62); background: rgba(255, 255, 255, .23); }
+    .spotlight-interface { padding: 22px clamp(16px, 3vw, 40px) 34px; color: white; }
+    .spotlight-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+    .spotlight-heading p { margin: 0 0 5px; color: rgba(255, 255, 255, .66); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .spotlight-heading h1 { margin: 0; color: white; font-family: var(--body); font-size: clamp(1.35rem, 2.2vw, 2rem); font-weight: 700; line-height: 1.15; text-transform: none; }
+    .spotlight-hint { max-width: 260px; margin: 0; color: rgba(255, 255, 255, .58); font-size: .78rem; text-align: right; }
+    .section-switches { display: flex; width: fit-content; max-width: 100%; gap: 6px; margin: 0 auto 24px; padding: 6px; overflow-x: auto; border: 1px solid rgba(255, 255, 255, .23); border-radius: 13px; background: rgba(7, 12, 37, .3); box-shadow: inset 0 1px 9px rgba(4, 7, 25, .2); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); scrollbar-width: none; }
+    .section-switches::-webkit-scrollbar { display: none; }
+    .section-switch {
+      display: inline-flex;
+      min-width: 116px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      background: transparent;
+      color: rgba(255, 255, 255, .68);
+      font: 600 .78rem var(--body);
+      cursor: pointer;
+      transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .section-switch:hover { transform: translateY(-1px); background: rgba(255, 255, 255, .09); color: white; }
+    .switch-light { position: relative; width: 11px; height: 11px; flex: 0 0 11px; border: 1px solid rgba(255, 255, 255, .45); border-radius: 50%; background: rgba(255, 255, 255, .12); transition: background .2s ease, box-shadow .2s ease; }
+    .section-switch[aria-selected="true"] { border-color: rgba(255, 255, 255, .34); background: linear-gradient(145deg, rgba(255, 255, 255, .25), rgba(255, 255, 255, .11)); color: #fff; box-shadow: inset 0 1px rgba(255, 255, 255, .25), 0 5px 18px rgba(3, 6, 26, .2); }
+    .section-switch[aria-selected="true"] .switch-light { border-color: #fff0b9; background: #ffd866; box-shadow: 0 0 7px 2px rgba(255, 206, 82, .75), 0 0 18px rgba(255, 115, 112, .55); animation: switch-glow 2.2s ease-in-out infinite; }
+    @keyframes switch-glow { 50% { box-shadow: 0 0 11px 3px rgba(255, 206, 82, .95), 0 0 23px rgba(255, 115, 112, .68); } }
+    .spotlight-deck { display: grid; min-height: 510px; grid-template-columns: minmax(160px, .72fr) minmax(420px, 1.65fr) minmax(160px, .72fr); align-items: stretch; gap: clamp(10px, 1.8vw, 24px); perspective: 1100px; }
+    .spotlight-panel { min-width: 0; min-height: 510px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .38); border-radius: 17px; background: linear-gradient(145deg, rgba(255, 255, 255, .28), rgba(255, 255, 255, .09) 54%, rgba(34, 39, 88, .3)); box-shadow: inset 0 1px rgba(255, 255, 255, .42), 0 22px 50px rgba(4, 8, 32, .2); -webkit-backdrop-filter: blur(26px) saturate(1.35); backdrop-filter: blur(26px) saturate(1.35); }
+    .active-panel { position: relative; padding: clamp(22px, 3vw, 38px); color: #fff; animation: spotlight-in .36s cubic-bezier(.2, .75, .25, 1) both; }
+    @keyframes spotlight-in { from { opacity: .6; transform: translateY(9px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .preview-panel { display: flex; flex-direction: column; justify-content: space-between; padding: 22px 18px; filter: blur(5px) saturate(.72); opacity: .56; transform: scale(.94); transition: filter .35s ease, opacity .35s ease, transform .35s ease; }
+    .preview-panel:hover, .preview-panel:focus-within { filter: blur(1px) saturate(1); opacity: .85; transform: scale(.97); }
+    .preview-index { color: rgba(255, 255, 255, .52); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
+    .preview-main { display: grid; gap: 12px; }
+    .preview-copy { display: grid; gap: 8px; min-width: 0; }
+    .preview-mark { color: rgba(255, 255, 255, .8); font-family: var(--display); font-size: clamp(3rem, 7vw, 5.6rem); line-height: .8; }
+    .preview-panel h2 { margin: 0; color: #fff; font-family: var(--body); font-size: 1rem; line-height: 1.2; text-transform: uppercase; }
+    .preview-panel p { margin: 0; color: rgba(255, 255, 255, .73); font-size: .76rem; line-height: 1.55; }
+    .preview-open { display: inline-flex; min-height: 34px; align-items: center; justify-content: center; padding: 0 10px; border: 1px solid rgba(255, 255, 255, .34); border-radius: 7px; background: rgba(255, 255, 255, .13); color: white; font: 600 .72rem var(--body); cursor: pointer; }
+    .preview-open:hover { background: rgba(255, 255, 255, .24); }
+    .active-eyebrow { margin: 0 0 8px; color: #ffe6a2; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .active-panel h2 { margin: 0 0 7px; color: #fff; font-family: var(--body); font-size: clamp(1.6rem, 2.8vw, 2.5rem); letter-spacing: 0; line-height: 1.08; text-transform: none; }
+    .active-lede { max-width: 680px; margin: 0; color: rgba(255, 255, 255, .78); font-size: .92rem; }
+    .view-scroll { max-height: 398px; margin-top: 22px; overflow: auto; scrollbar-color: rgba(255, 255, 255, .44) transparent; scrollbar-width: thin; }
+    .overview-content { display: grid; grid-template-columns: 126px minmax(0, 1fr); align-items: start; gap: 22px; }
+    .overview-photo { width: 126px; height: 158px; border: 1px solid rgba(255, 255, 255, .68); border-radius: 9px; object-fit: cover; object-position: center 24%; box-shadow: 0 12px 30px rgba(2, 5, 24, .24); }
+    .overview-copy p { margin-bottom: 13px; color: rgba(255, 255, 255, .84); font-size: .86rem; }
+    .glass-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .glass-chip { display: inline-flex; min-height: 29px; align-items: center; padding: 0 9px; border: 1px solid rgba(255, 255, 255, .28); border-radius: 7px; background: rgba(255, 255, 255, .1); color: #fff; font-size: .7rem; }
+    .career-list { display: grid; gap: 9px; }
+    .career-item { padding: 12px 14px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 9px; background: rgba(255, 255, 255, .09); }
+    .career-top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+    .career-item h3 { margin: 0; color: #fff; font-size: .87rem; }
+    .career-date { flex: 0 0 auto; color: #ffe49e; font-size: .7rem; font-weight: 700; }
+    .career-company { margin: 3px 0 7px; color: rgba(255, 255, 255, .66); font-size: .74rem; }
+    .career-item ul { margin: 0; padding-left: 17px; color: rgba(255, 255, 255, .84); font-size: .76rem; }
+    .career-item li + li { margin-top: 3px; }
+    .education-feature { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 19px; border: 1px solid rgba(255, 255, 255, .32); border-radius: 11px; background: rgba(255, 255, 255, .12); }
+    .education-feature h3 { margin: 0 0 4px; color: white; font-size: 1rem; }
+    .education-feature p { margin: 0; color: rgba(255, 255, 255, .72); font-size: .81rem; }
+    .gpa-mark { display: grid; width: 72px; aspect-ratio: 1; place-items: center; border: 1px solid rgba(255, 255, 255, .5); border-radius: 50%; background: linear-gradient(145deg, rgba(255, 211, 97, .4), rgba(255, 105, 146, .22)); color: white; font-weight: 700; }
+    .training-list { display: grid; gap: 8px; margin-top: 12px; }
+    .training-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 13px; border-bottom: 1px solid rgba(255, 255, 255, .18); color: rgba(255, 255, 255, .88); font-size: .8rem; }
+    .training-item span:last-child { color: #ffe49e; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+    .certificate-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .certificate-link { display: flex; min-height: 58px; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 8px; background: rgba(255, 255, 255, .09); color: #fff; font-size: .76rem; text-decoration: none; transition: background .18s ease, transform .18s ease; }
+    .certificate-link:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .19); }
+    .certificate-link span:last-child { color: #ffe49e; font-size: .68rem; white-space: nowrap; }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .contact-tile { min-height: 94px; padding: 15px; border: 1px solid rgba(255, 255, 255, .25); border-radius: 9px; background: rgba(255, 255, 255, .1); color: #fff; text-decoration: none; }
+    .contact-tile:hover { background: rgba(255, 255, 255, .19); }
+    .contact-tile span { display: block; margin-bottom: 6px; color: #ffe49e; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .contact-tile strong { font-size: .82rem; overflow-wrap: anywhere; }
+    .stage-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 13px; color: rgba(255, 255, 255, .7); font-size: .72rem; }
+    .stage-arrows { display: flex; gap: 7px; }
+    .stage-arrow { display: grid; width: 36px; height: 34px; place-items: center; border: 1px solid rgba(255, 255, 255, .3); border-radius: 7px; background: rgba(255, 255, 255, .1); color: white; font-size: 1.15rem; cursor: pointer; }
+    .stage-arrow:hover { background: rgba(255, 255, 255, .23); }
+    .spotlight-footnote { margin: 17px 0 0; color: rgba(255, 255, 255, .52); font-size: .71rem; text-align: center; }
+    .dock { border-color: rgba(255, 255, 255, .33); background: rgba(23, 25, 61, .48); box-shadow: 0 10px 34px rgba(3, 6, 26, .4); }
+    .dock-link { color: rgba(255, 255, 255, .85); }
+    .dock-link:hover, .dock-link:focus-visible { border-color: rgba(255, 255, 255, .32); background: rgba(255, 255, 255, .2); }
+    .dock-divider { background: rgba(255, 255, 255, .3); }
+    @media (max-width: 900px) {
+      .spotlight-deck { grid-template-columns: minmax(120px, .55fr) minmax(340px, 1.8fr) minmax(120px, .55fr); gap: 10px; }
+      .preview-panel { padding-inline: 13px; }
+      .spotlight-panel { min-height: 480px; }
+    }
+    @media (max-width: 740px) {
+      body { overflow-x: clip; }
+      .app-window { width: calc(100vw - 20px); max-height: calc(100dvh - 112px); }
+      .spotlight-interface { padding: 18px 14px 26px; }
+      .spotlight-heading { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .spotlight-hint { text-align: left; }
+      .section-switches { width: 100%; justify-content: flex-start; margin-bottom: 14px; }
+      .section-switch { min-width: 103px; min-height: 42px; }
+      .spotlight-deck { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 9px; }
+      .spotlight-panel { min-height: 0; }
+      .preview-panel { min-height: 105px; flex-direction: row; align-items: center; gap: 12px; padding: 13px 16px; filter: blur(3px) saturate(.74); transform: scale(.98); }
+      .preview-main { grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 10px; }
+      .preview-mark { font-size: 2.6rem; }
+      .preview-panel h2 { font-size: .78rem; }
+      .preview-panel p { display: none; }
+      .preview-open { min-height: 30px; }
+      .active-panel { min-height: 430px; padding: 20px 17px; }
+      .view-scroll { max-height: none; }
+      .overview-content { grid-template-columns: 86px minmax(0, 1fr); gap: 14px; }
+      .overview-photo { width: 86px; height: 112px; }
+      .overview-copy p { font-size: .79rem; }
+      .career-item { padding: 10px; }
+      .career-top { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .certificate-list, .contact-grid { grid-template-columns: 1fr; }
+      .certificate-link { min-height: 48px; }
+      .contact-tile { min-height: 75px; }
+      .stage-footer { margin-top: 10px; }
+      .spotlight-footnote { margin-top: 12px; }
+    }
+    @media (max-width: 390px) {
+      .active-panel { padding-inline: 13px; }
+      .overview-content { grid-template-columns: 1fr; }
+      .overview-photo { width: 80px; height: 98px; }
+      .preview-main { grid-template-columns: 30px minmax(0, 1fr) auto; }
+      .preview-mark { font-size: 2rem; }
     }
   </style>
 </head>
@@ -561,6 +712,34 @@
       </div>
     </div>
 
+    <main class="spotlight-interface" id="top">
+      <header class="spotlight-heading">
+        <div><p>Interactive career portfolio</p><h1>Explore A'ang's profile</h1></div>
+        <p class="spotlight-hint">Choose a section to bring it into focus.</p>
+      </header>
+      <div class="section-switches" role="tablist" aria-label="Portfolio sections">
+        <button class="section-switch" type="button" role="tab" id="tab-overview" aria-controls="spotlight-panel" aria-selected="true" tabindex="0" data-view="overview"><span class="switch-light" aria-hidden="true"></span><span>Profile</span></button>
+        <button class="section-switch" type="button" role="tab" id="tab-experience" aria-controls="spotlight-panel" aria-selected="false" tabindex="-1" data-view="experience"><span class="switch-light" aria-hidden="true"></span><span>Experience</span></button>
+        <button class="section-switch" type="button" role="tab" id="tab-education" aria-controls="spotlight-panel" aria-selected="false" tabindex="-1" data-view="education"><span class="switch-light" aria-hidden="true"></span><span>Education</span></button>
+        <button class="section-switch" type="button" role="tab" id="tab-skills" aria-controls="spotlight-panel" aria-selected="false" tabindex="-1" data-view="skills"><span class="switch-light" aria-hidden="true"></span><span>Skills</span></button>
+        <button class="section-switch" type="button" role="tab" id="tab-certificates" aria-controls="spotlight-panel" aria-selected="false" tabindex="-1" data-view="certificates"><span class="switch-light" aria-hidden="true"></span><span>Certificates</span></button>
+        <button class="section-switch" type="button" role="tab" id="tab-contact" aria-controls="spotlight-panel" aria-selected="false" tabindex="-1" data-view="contact"><span class="switch-light" aria-hidden="true"></span><span>Contact</span></button>
+      </div>
+      <div class="spotlight-deck" id="spotlight-deck" aria-label="Selected portfolio section">
+        <article class="spotlight-panel preview-panel is-before" id="preview-before"></article>
+        <article class="spotlight-panel active-panel" id="spotlight-panel" role="tabpanel" aria-labelledby="tab-overview" aria-live="polite" tabindex="0"></article>
+        <article class="spotlight-panel preview-panel is-after" id="preview-after"></article>
+      </div>
+      <div class="stage-footer">
+        <span id="view-counter" aria-live="polite">01 / 06</span>
+        <div class="stage-arrows">
+          <button class="stage-arrow" id="previous-view" type="button" aria-label="Previous section" title="Previous section">&#8592;</button>
+          <button class="stage-arrow" id="next-view" type="button" aria-label="Next section" title="Next section">&#8594;</button>
+        </div>
+      </div>
+      <p class="spotlight-footnote">A'ang Kurnia, S.T. / Civil Engineer / South Jakarta, Indonesia</p>
+    </main>
+
   <header class="topbar shell">
     <a class="wordmark" href="#top">A'ang Kurnia / Civil Engineer</a>
     <nav class="nav" aria-label="Main navigation">
@@ -571,7 +750,7 @@
     </nav>
   </header>
 
-  <main id="top">
+  <main id="legacy-content">
     <section class="hero shell" aria-labelledby="hero-title">
       <div>
         <p class="eyebrow">Civil &amp; Structural / Site Supervision / EPC Support</p>
@@ -688,19 +867,19 @@
   </div>
 
   <nav class="dock" aria-label="Quick navigation">
-    <a class="dock-link" href="#top" aria-label="Profile overview" title="Profile overview">
+    <a class="dock-link" href="#top" data-view="overview" aria-label="Profile overview" title="Profile overview">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Profile</span>
     </a>
-    <a class="dock-link" href="#experience" aria-label="Work experience" title="Work experience">
+    <a class="dock-link" href="#experience" data-view="experience" aria-label="Work experience" title="Work experience">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/></svg><span>Experience</span>
     </a>
-    <a class="dock-link" href="#education" aria-label="Education" title="Education">
+    <a class="dock-link" href="#education" data-view="education" aria-label="Education" title="Education">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5zM6 11v5c3 3 9 3 12 0v-5m4-2v7"/></svg><span>Education</span>
     </a>
-    <a class="dock-link" href="#certificates" aria-label="Certificates" title="Certificates">
+    <a class="dock-link" href="#certificates" data-view="certificates" aria-label="Certificates" title="Certificates">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM14 3v5h5m-11 4h8m-8 4h8m-8 4h5"/></svg><span>Certificates</span>
     </a>
-    <a class="dock-link" href="#contact" aria-label="Contact" title="Contact">
+    <a class="dock-link" href="#contact" data-view="contact" aria-label="Contact" title="Contact">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span>
     </a>
     <span class="dock-divider" aria-hidden="true"></span>
@@ -757,6 +936,138 @@
     };
     updateClock();
     window.setInterval(updateClock, 60000);
+
+    const profilePages = {
+      overview: {
+        title: "Profile",
+        preview: "A field-focused civil engineer with hands-on site and quality experience.",
+        html: `<div class="overview-content">
+          <img class="overview-photo" src="foto-profil.png" alt="Portrait of A'ang Kurnia">
+          <div class="overview-copy">
+            <p class="active-eyebrow">Civil Engineer / S.T.</p>
+            <h2>A'ang Kurnia</h2>
+            <p>Civil Engineering graduate from Gunadarma University with experience in site supervision, structural quality inspections, drawing compliance, material and quantity verification, and project reporting.</p>
+            <p>Safety-minded and ready to support civil and structural work packages in a multidisciplinary EPC environment.</p>
+            <div class="glass-chips"><span class="glass-chip">GPA 3.33 / 4.00</span><span class="glass-chip">AutoCAD</span><span class="glass-chip">OHS / K3</span><span class="glass-chip">South Jakarta</span></div>
+          </div>
+        </div>`
+      },
+      experience: {
+        title: "Work Experience",
+        preview: "Construction supervision, inspection, drafting, and field delivery assignments.",
+        html: `<p class="active-eyebrow">Selected work / 2021 - Present</p><h2>Work Experience</h2><p class="active-lede">Site supervision, quality checks, field coordination, and practical reporting.</p>
+          <div class="view-scroll career-list">
+            <article class="career-item"><div class="career-top"><h3>Site Supervisor / Project-Based</h3><span class="career-date">2024 - 2025</span></div><p class="career-company">Freelance Construction Services / South Jakarta</p><ul><li>Supervised stamp-concrete work at the Lavande Apartment lobby; checked mix quality and enforced OHS/K3 controls.</li><li>Led Permata Hijau jogging-track site operations, estimates, procurement, and schedule monitoring.</li><li>Prepared daily, weekly, and monthly progress reports.</li></ul></article>
+            <article class="career-item"><div class="career-top"><h3>Field Inspector / Project Contract</h3><span class="career-date">2024 / 3 months</span></div><p class="career-company">PT Duta Cipta Consultindo / East &amp; South Jakarta</p><ul><li>Checked site execution against approved shop drawings.</li><li>Verified materials and specifications against BOQ/RAB for sanitation renovation works.</li><li>Compiled progress reports and photographic evidence.</li></ul></article>
+            <article class="career-item"><div class="career-top"><h3>Field Delivery Partner</h3><span class="career-date">2024 - Present</span></div><p class="career-company">PT Shopee International Indonesia / Greater Jakarta Area</p><ul><li>Plan efficient daily routes and meet operational targets.</li><li>Follow road-safety standards and operating procedures while resolving field issues professionally.</li></ul></article>
+            <article class="career-item"><div class="career-top"><h3>Surveyor &amp; Drafter / Project Contract</h3><span class="career-date">2023 / 7 months</span></div><p class="career-company">PT Tri Bina Buana / Central Jakarta</p><ul><li>Surveyed proposed septic tank and WWTP/IPAL locations.</li><li>Produced shop drawings and DED using AutoCAD and communicated implementation plans to communities.</li></ul></article>
+            <article class="career-item"><div class="career-top"><h3>Quality Control Engineer / Internship</h3><span class="career-date">2021 / 3 months</span></div><p class="career-company">PT Arkindo - PT Galatama, KSO / Depok</p><ul><li>Inspected structural construction at the UPNVJ Faculty of Medicine project and identified defects.</li><li>Verified incoming materials and prepared quality reports and technical documentation.</li></ul></article>
+          </div>`
+      },
+      education: {
+        title: "Education",
+        preview: "Civil Engineering degree, Transportation concentration, and technical training.",
+        html: `<p class="active-eyebrow">Academic background</p><h2>Education</h2><p class="active-lede">A civil engineering foundation supported by field-oriented technical training.</p>
+          <div class="view-scroll">
+            <article class="education-feature"><div><h3>Gunadarma University</h3><p>Bachelor of Engineering (S.T.) / Civil Engineering<br>Transportation Engineering concentration / 2018 - 2023</p></div><span class="gpa-mark">3.33</span></article>
+            <div class="training-list"><div class="training-item"><span>Basic AutoCAD Training</span><span>2023</span></div><div class="training-item"><span>Drainage Network Training</span><span>2021</span></div><div class="training-item"><span>OHS &amp; Field Survey Training</span><span>2019 - 2020</span></div></div>
+          </div>`
+      },
+      skills: {
+        title: "Skills",
+        preview: "Technical, site coordination, reporting, and safety capabilities.",
+        html: `<p class="active-eyebrow">Capabilities / Tools</p><h2>Skills</h2><p class="active-lede">Practical strengths for civil and structural site delivery.</p>
+          <div class="view-scroll"><h3 class="active-eyebrow">Technical</h3><div class="glass-chips"><span class="glass-chip">AutoCAD</span><span class="glass-chip">Microsoft Office</span><span class="glass-chip">Microsoft Project</span><span class="glass-chip">Shop / As-Built Drawings</span><span class="glass-chip">Drawing Interpretation</span><span class="glass-chip">BOQ / RAB Verification</span><span class="glass-chip">Cost Estimation</span><span class="glass-chip">Site Inspection</span><span class="glass-chip">Quality Control</span></div><h3 class="active-eyebrow" style="margin-top:24px">Site &amp; Coordination</h3><div class="glass-chips"><span class="glass-chip">Site Supervision</span><span class="glass-chip">Team Coordination</span><span class="glass-chip">Progress Reporting</span><span class="glass-chip">Field Problem Solving</span><span class="glass-chip">Time Management</span><span class="glass-chip">OHS / K3 Compliance</span></div></div>`
+      },
+      certificates: {
+        title: "Certificates",
+        preview: "Seven certificate documents, listed once each; duplicate file omitted.",
+        html: `<p class="active-eyebrow">Training documents</p><h2>Certificates</h2><p class="active-lede">Select a document to open the original PDF.</p>
+          <div class="view-scroll certificate-list">
+            <a class="certificate-link" href="sertifikat/Seriticate%20of%20Planing%20a%20Drainage%20Network%20Sytem_A%27ang%20Kurnia.pdf"><span>Planning a Drainage Network System</span><span>PDF / OPEN</span></a>
+            <a class="certificate-link" href="sertifikat/Sertificate%20of%20Analysis%20of%20Planing%20Area_A%27ang%20Kurnia.pdf"><span>Analysis of Planning Area</span><span>PDF / OPEN</span></a>
+            <a class="certificate-link" href="sertifikat/Sertificate%20of%20Carry%20Out%20The%20Network%20of%20Survey%20and%20Field%20Investigation_A%27ang%20Kurnia.pdf"><span>Network Survey and Field Investigation</span><span>PDF / OPEN</span></a>
+            <a class="certificate-link" href="sertifikat/Sertificate%20of%20Communication%20at%20Work%20and%20Prepatory%20Work_A%27ang%20Kurnia.pdf"><span>Communication at Work and Preparatory Work</span><span>PDF / OPEN</span></a>
+            <a class="certificate-link" href="sertifikat/Sertificate%20of%20Making%20Detail%20Desain%20of%20The%20Drainase%20Network_A%27ang%20Kurnia.pdf"><span>Detail Design of the Drainage Network</span><span>PDF / OPEN</span></a>
+            <a class="certificate-link" href="sertifikat/Sertificate%20of%20Managing%20Project%20with%20Microsoft%20Project_A%27ang%20Kurnia.pdf"><span>Managing Projects with Microsoft Project</span><span>PDF / OPEN</span></a>
+            <a class="certificate-link" href="sertifikat/Sertificate%20Prakerja_A%27ang%20Kuria.pdf"><span>Prakerja Certificate</span><span>PDF / OPEN</span></a>
+          </div>`
+      },
+      contact: {
+        title: "Contact",
+        preview: "Reach out by email, WhatsApp, or phone; download the tailored CV.",
+        html: `<p class="active-eyebrow">Get in touch</p><h2>Let's discuss the site.</h2><p class="active-lede">Available for civil and structural project opportunities in Cikarang and across Indonesia.</p>
+          <div class="view-scroll contact-grid"><a class="contact-tile" href="mailto:goankproject027@gmail.com"><span>Email</span><strong>goankproject027@gmail.com</strong></a><a class="contact-tile" href="tel:+6285281080925"><span>Phone</span><strong>+62 852-8108-0925</strong></a><a class="contact-tile" href="https://wa.me/6285281080925" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>Message A'ang</strong></a><a class="contact-tile" href="CV_Aang_Kurnia_Siemens_Energy.pdf" download><span>CV / PDF</span><strong>Download tailored CV</strong></a><div class="contact-tile"><span>Location</span><strong>South Jakarta, Indonesia</strong></div></div>`
+      }
+    };
+
+    const viewKeys = Object.keys(profilePages);
+    const sectionTabs = [...document.querySelectorAll(".section-switch")];
+    const activePanel = document.getElementById("spotlight-panel");
+    const viewCounter = document.getElementById("view-counter");
+    let activeView = "overview";
+
+    function makePreview(viewKey, side) {
+      const page = profilePages[viewKey];
+      const index = viewKeys.indexOf(viewKey);
+      const preview = document.createElement("article");
+      preview.id = side === "is-before" ? "preview-before" : "preview-after";
+      preview.className = `spotlight-panel preview-panel ${side}`;
+      preview.innerHTML = `<span class="preview-index">${String(index + 1).padStart(2, "0")} / 06</span><div class="preview-main"><span class="preview-mark">${String(index + 1).padStart(2, "0")}</span><div class="preview-copy"><h2>${page.title}</h2><p>${page.preview}</p></div><button class="preview-open" type="button" aria-label="Open ${page.title}">Open</button></div>`;
+      preview.querySelector(".preview-open").addEventListener("click", () => selectView(viewKey));
+      return preview;
+    }
+
+    function selectView(viewKey, moveFocus = false) {
+      const page = profilePages[viewKey];
+      if (!page) return;
+      activeView = viewKey;
+      sectionTabs.forEach((tab) => {
+        const selected = tab.dataset.view === viewKey;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      activePanel.setAttribute("aria-labelledby", `tab-${viewKey}`);
+      activePanel.innerHTML = `<p class="active-eyebrow">${String(viewKeys.indexOf(viewKey) + 1).padStart(2, "0")} / 06</p>${page.html}`;
+      activePanel.classList.remove("panel-enter");
+      void activePanel.offsetWidth;
+      activePanel.classList.add("panel-enter");
+      const index = viewKeys.indexOf(viewKey);
+      document.getElementById("preview-before").replaceWith(makePreview(viewKeys[(index + viewKeys.length - 1) % viewKeys.length], "is-before"));
+      document.getElementById("preview-after").replaceWith(makePreview(viewKeys[(index + 1) % viewKeys.length], "is-after"));
+      viewCounter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(viewKeys.length).padStart(2, "0")}  /  ${page.title}`;
+      if (moveFocus) document.getElementById(`tab-${viewKey}`).focus();
+    }
+
+    sectionTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectView(tab.dataset.view));
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex = index;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % sectionTabs.length;
+        else if (event.key === "ArrowLeft") nextIndex = (index + sectionTabs.length - 1) % sectionTabs.length;
+        else if (event.key === "Home") nextIndex = 0;
+        else if (event.key === "End") nextIndex = sectionTabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectView(sectionTabs[nextIndex].dataset.view, true);
+      });
+    });
+
+    document.querySelectorAll(".dock-link[data-view]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        selectView(link.dataset.view);
+        if (portfolioWindow.classList.contains("is-hidden")) restorePortfolio();
+      });
+    });
+    document.getElementById("previous-view").addEventListener("click", () => {
+      selectView(viewKeys[(viewKeys.indexOf(activeView) + viewKeys.length - 1) % viewKeys.length]);
+    });
+    document.getElementById("next-view").addEventListener("click", () => {
+      selectView(viewKeys[(viewKeys.indexOf(activeView) + 1) % viewKeys.length]);
+    });
+
+    selectView(activeView);
   </script>
 </body>
 </html>
