@@ -254,9 +254,313 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
+
+    body {
+      min-height: 100vh;
+      display: block;
+      padding: 60px 24px 96px;
+      background-color: #254452;
+      background-image:
+        linear-gradient(128deg, rgba(12, 29, 43, .78) 0%, rgba(12, 29, 43, .08) 62%),
+        repeating-linear-gradient(148deg, rgba(255, 255, 255, .055) 0 1px, transparent 1px 72px),
+        linear-gradient(32deg, #345b68 0%, #688a7c 48%, #bac396 100%);
+      background-attachment: fixed;
+    }
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 8px;
+      left: 8px;
+      padding: 10px 14px;
+      transform: translateY(-150%);
+      background: var(--ink);
+      color: white;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .system-bar {
+      position: fixed;
+      z-index: 10;
+      inset: 0 0 auto;
+      display: flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, .5);
+      background: rgba(249, 250, 247, .8);
+      color: #1d2a28;
+      font-size: .76rem;
+      backdrop-filter: blur(22px) saturate(1.3);
+    }
+    .system-brand, .system-status { display: flex; align-items: center; gap: 10px; }
+    .system-brand { font-weight: 700; }
+    .brand-mark {
+      display: grid;
+      width: 22px;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--green);
+      color: white;
+      font-size: .61rem;
+      font-weight: 700;
+    }
+    .system-status { color: #48534e; }
+    .system-status span + span { padding-left: 10px; border-left: 1px solid #bcc5bd; }
+    .app-window {
+      position: relative;
+      width: min(1180px, 100%);
+      max-height: calc(100vh - 112px);
+      min-height: min(700px, calc(100vh - 112px));
+      margin: 0 auto;
+      overflow: auto;
+      border: 1px solid rgba(255, 255, 255, .75);
+      border-radius: 16px;
+      background: rgba(250, 251, 249, .68);
+      box-shadow: 0 28px 90px rgba(9, 24, 27, .32), 0 2px 8px rgba(9, 24, 27, .14), inset 0 1px rgba(255, 255, 255, .72);
+      -webkit-backdrop-filter: blur(34px) saturate(1.35);
+      backdrop-filter: blur(34px) saturate(1.35);
+      scrollbar-color: #aab5ae transparent;
+      scrollbar-width: thin;
+      transition: width .22s ease, max-height .22s ease, border-radius .22s ease, opacity .2s ease, transform .2s ease;
+    }
+    .app-window.is-maximized {
+      position: fixed;
+      z-index: 8;
+      inset: 46px 12px 80px;
+      width: auto;
+      max-height: none;
+      border-radius: 12px;
+    }
+    .app-window.is-hidden { display: none; }
+    .window-titlebar {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      display: grid;
+      min-height: 48px;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid #dce1dc;
+      background: rgba(246, 248, 245, .66);
+      backdrop-filter: blur(18px);
+    }
+    .window-controls, .window-actions { display: flex; align-items: center; gap: 8px; }
+    .window-control {
+      display: grid;
+      width: 13px;
+      height: 13px;
+      padding: 0;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: filter .15s ease, transform .15s ease;
+    }
+    .window-control:hover { filter: brightness(.9); transform: scale(1.08); }
+    .window-control.close { background: #ff5f57; }
+    .window-control.minimize { background: #febc2e; }
+    .window-control.maximize { background: #28c840; }
+    .window-title { justify-self: center; color: #58635e; font-size: .78rem; font-weight: 600; white-space: nowrap; }
+    .window-actions { justify-content: flex-end; }
+    .window-download {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      gap: 7px;
+      padding: 0 11px;
+      border: 1px solid #cbd4cc;
+      border-radius: 7px;
+      background: #fff;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .window-download:hover { border-color: var(--green); background: #eef4ef; }
+    .window-download svg { width: 14px; height: 14px; }
+    .topbar.shell { min-height: 70px; padding: 0 28px; background: rgba(255, 255, 255, .2); }
+    .nav { gap: 7px; }
+    .nav a {
+      padding: 8px 11px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      color: #46524c;
+      font-size: .78rem;
+      transition: background .16s ease, border-color .16s ease, color .16s ease;
+    }
+    .nav a:hover, .nav a:focus-visible { border-color: #dbe3dc; background: #fff; color: var(--green); text-decoration: none; }
+    .header { margin: 0 28px 28px; padding: 28px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 12px; background: rgba(255, 255, 255, .52); box-shadow: 0 3px 14px rgba(26, 43, 35, .045), inset 0 1px rgba(255, 255, 255, .8); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+    .profile-img-container { width: 112px; height: 112px; padding: 5px; border-radius: 24px; background: #eef2ec; box-shadow: none; }
+    .profile-img-container img { border-radius: 19px; box-shadow: none; }
+    .header-info h1 { color: var(--ink); font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1; text-shadow: none; }
+    .contact-card { padding: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--muted); font-size: .83rem; }
+    .nav-menu { position: sticky; z-index: 4; top: 48px; gap: 8px; justify-content: flex-start; margin: 0 28px; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, .48); background: rgba(250, 251, 249, .62); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+    .nav-btn { flex: 0 0 auto; padding: 9px 13px; border: 1px solid #d9dfd9; border-radius: 8px; background: #fff; color: #47534d; font-size: .78rem; box-shadow: none; }
+    .nav-btn:hover { background: #eef4ef; color: var(--green); }
+    .nav-btn.active, .nav-btn:active { border-color: #c3d6c7; background: #e8f1e9; color: var(--green); box-shadow: none; }
+    .tab-content { padding: 12px 28px 32px; }
+    .content-card { margin: 0 0 16px; padding: 24px 26px; border: 1px solid rgba(255, 255, 255, .82); border-radius: 10px; background: rgba(255, 255, 255, .72); box-shadow: 0 2px 10px rgba(26, 43, 35, .035), inset 0 1px rgba(255, 255, 255, .85); }
+    .content-card h2 { color: var(--ink); font-family: var(--body); font-size: .83rem; letter-spacing: .08em; }
+    .content-card p { color: #48544e; font-size: .92rem; }
+    .content-card p:last-child { margin-bottom: 0; }
+    .job-title { color: var(--green); font-size: 1rem; }
+    .company-name { color: var(--muted); }
+    .skills-tag { border: 1px solid #e1e7e1; border-radius: 7px; background: #f8faf7; box-shadow: none; }
+    .window-footer { padding: 13px 28px; border-top: 1px solid #e0e5df; color: #7a847e; font-size: .72rem; }
+    .dock {
+      position: fixed;
+      z-index: 9;
+      inset: auto 50% 14px auto;
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      max-width: calc(100vw - 24px);
+      padding: 8px 10px;
+      transform: translateX(50%);
+      border: 1px solid rgba(255, 255, 255, .7);
+      border-radius: 16px;
+      background: rgba(247, 249, 246, .76);
+      box-shadow: 0 10px 34px rgba(9, 24, 27, .24);
+      backdrop-filter: blur(22px) saturate(1.3);
+    }
+    .dock-link {
+      position: relative;
+      display: grid;
+      width: 48px;
+      min-width: 48px;
+      height: 50px;
+      place-items: center;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      background: transparent;
+      color: #344b40;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .dock-link:hover, .dock-link:focus-visible { transform: translateY(-5px); border-color: #d6dfd7; background: rgba(255, 255, 255, .9); }
+    .dock-link svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+    .dock-link span { position: absolute; top: -31px; left: 50%; padding: 4px 8px; transform: translateX(-50%); border-radius: 5px; background: #1c2924; color: white; font-size: .68rem; opacity: 0; pointer-events: none; white-space: nowrap; }
+    .dock-link:hover span, .dock-link:focus-visible span { opacity: 1; }
+    .dock-divider { width: 1px; height: 36px; align-self: center; background: #aeb9b0; }
+    .window-notice {
+      position: fixed;
+      z-index: 8;
+      inset: 50% auto auto 50%;
+      width: min(340px, calc(100vw - 40px));
+      padding: 26px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 14px;
+      background: rgba(250, 251, 249, .95);
+      box-shadow: 0 18px 60px rgba(9, 24, 27, .3);
+      text-align: center;
+      backdrop-filter: blur(20px);
+    }
+    .window-notice[hidden] { display: none; }
+    .window-notice h2 { margin-bottom: 7px; font-family: var(--body); font-size: 1.1rem; }
+    .window-notice p { margin-bottom: 18px; color: var(--muted); font-size: .86rem; }
+    .restore-button { min-height: 42px; padding: 0 16px; border: 0; border-radius: 8px; background: var(--green); color: white; font: 700 .84rem var(--body); cursor: pointer; }
+    .restore-button:hover { background: #1d4837; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .app-window { background: rgba(250, 251, 249, .94); }
+      .window-titlebar, .nav-menu { background: rgba(246, 248, 245, .96); }
+      .header, .content-card { background: rgba(255, 255, 255, .96); }
+    }
+    @media (max-width: 740px) {
+      body { min-height: 100vh; padding: 52px 10px 92px; }
+      .app-window { width: calc(100vw - 20px); overflow-x: hidden; }
+      .system-bar { min-height: 36px; padding-inline: 12px; }
+      .system-status { min-width: 0; overflow: hidden; }
+      .system-status span:first-child { display: none; }
+      .app-window { width: 100%; min-height: calc(100vh - 154px); max-height: none; border-radius: 13px; }
+      .app-window.is-maximized { inset: 42px 5px 78px; }
+      .window-titlebar { min-height: 44px; grid-template-columns: 1fr 1fr 1fr; padding-inline: 11px; }
+      .window-title { font-size: .68rem; }
+      .window-download { width: 32px; min-height: 32px; justify-content: center; padding: 0; }
+      .window-download .download-label { display: none; }
+      .topbar.shell { min-height: auto; align-items: flex-start; gap: 10px; padding: 15px 16px; }
+      .topbar.shell { width: auto; max-width: none; margin-inline: 0; }
+      .wordmark { font-size: 1.15rem; }
+      .nav { width: 100%; gap: 5px; overflow-x: auto; padding: 0 0 3px; }
+      .nav a { flex: 0 0 auto; padding: 7px 9px; font-size: .72rem; }
+      .hero.shell, .focus-strip.shell, .section.shell, .contact-band.shell, .window-footer .shell { width: auto; max-width: none; margin-inline: 14px; }
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero > div:first-child { width: 100%; min-width: 0; }
+      .hero .eyebrow, .hero-copy { width: 100%; max-width: 100%; overflow-wrap: anywhere; }
+      .header { align-items: flex-start; margin: 0 14px 18px; padding: 17px; text-align: left; }
+      .profile-img-container { width: 76px; height: 76px; padding: 4px; border-radius: 18px; }
+      .profile-img-container img { border-radius: 14px; }
+      .header-info h1 { font-size: 1.8rem; }
+      .contact-card { font-size: .77rem; }
+      .nav-menu { top: 44px; gap: 6px; margin-inline: 14px; overflow-x: auto; }
+      .nav-btn { padding: 8px 10px; font-size: .72rem; white-space: nowrap; }
+      .hero { padding-block: 58px; }
+      h1 { font-size: 3.5rem; }
+      h2 { font-size: 2.8rem; }
+      .contact-band h2 { font-size: 2.6rem; }
+      .mobile-break { display: block; }
+      .tab-content { padding: 10px 14px 22px; }
+      .content-card { padding: 18px 17px; }
+      .window-footer { padding-inline: 16px; }
+      .dock { bottom: 8px; gap: 3px; padding: 6px; border-radius: 14px; }
+      .dock-link { width: 43px; min-width: 43px; height: 45px; }
+      .dock-link svg { width: 21px; height: 21px; }
+    }
+    @media (max-width: 390px) {
+      body { padding-inline: 6px; }
+      .window-title { max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
+      .window-controls { gap: 6px; }
+      .window-control { width: 12px; height: 12px; }
+      .dock { gap: 1px; padding-inline: 4px; }
+      .dock-link { width: 39px; min-width: 39px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+    .hero { padding-block: 100px; }
+    h1 { font-size: 6.75rem; }
+    .hero-copy { font-size: 1.1rem; }
+    h2 { font-size: 3.5rem; }
+    .contact-band h2 { font-size: 3.25rem; }
+    .mobile-break { display: none; }
+    .hero h1 { max-width: 100%; overflow-wrap: anywhere; }
+    .hero .eyebrow { max-width: 100%; overflow-wrap: anywhere; }
+    @media (max-width: 740px) {
+      .hero { padding-block: 58px; grid-template-columns: minmax(0, 1fr); }
+      h1 { font-size: 3.5rem; }
+      h2 { font-size: 2.8rem; }
+      .contact-band h2 { font-size: 2.6rem; }
+      .mobile-break { display: block; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to portfolio</a>
+  <header class="system-bar" aria-label="Desktop menu bar">
+    <div class="system-brand"><span class="brand-mark" aria-hidden="true">AK</span><span>A'ang Portfolio</span></div>
+    <div class="system-status"><span>Professional Profile</span><span id="desktop-clock">Local time</span></div>
+  </header>
+
+  <div class="app-window" id="portfolio-window">
+    <div class="window-titlebar">
+      <div class="window-controls" aria-label="Window controls">
+        <button class="window-control close" id="close-window" type="button" aria-label="Close portfolio window" title="Close"></button>
+        <button class="window-control minimize" id="minimize-window" type="button" aria-label="Minimize portfolio window" title="Minimize"></button>
+        <button class="window-control maximize" id="maximize-window" type="button" aria-label="Toggle full-screen portfolio window" aria-pressed="false" title="Maximize"></button>
+      </div>
+      <div class="window-title">A'ang Kurnia - Professional Profile</div>
+      <div class="window-actions">
+        <a class="window-download" href="CV_Aang_Kurnia_Siemens_Energy.pdf" download aria-label="Download tailored CV" title="Download tailored CV">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+          <span class="download-label">Download CV</span>
+        </a>
+      </div>
+    </div>
+
   <header class="topbar shell">
     <a class="wordmark" href="#top">A'ang Kurnia / Civil Engineer</a>
     <nav class="nav" aria-label="Main navigation">
@@ -271,7 +575,7 @@
     <section class="hero shell" aria-labelledby="hero-title">
       <div>
         <p class="eyebrow">Civil &amp; Structural / Site Supervision / EPC Support</p>
-        <h1 id="hero-title">A'ang<br><span>Kurnia, S.T.</span></h1>
+        <h1 id="hero-title">A'ang<br><span>Kurnia,<br class="mobile-break">S.T.</span></h1>
         <p class="hero-copy">Civil Engineering graduate with hands-on experience supporting site supervision, structural quality inspections, drawing compliance, quantity and material verification, and project reporting. Safety-minded and ready to contribute to civil and structural delivery teams.</p>
         <div class="actions">
           <a class="button" href="mailto:goankproject027@gmail.com">Contact A'ang</a>
@@ -279,7 +583,7 @@
         </div>
       </div>
       <div class="portrait-wrap">
-        <img class="portrait" src="https://raw.githubusercontent.com/Aang-hub-art/aang/main/foto-profil.png" alt="Portrait of A'ang Kurnia" fetchpriority="high">
+        <img class="portrait" src="foto-profil.png" alt="Portrait of A'ang Kurnia" fetchpriority="high">
         <span class="portrait-note">Field-focused / Safety-led</span>
       </div>
     </section>
@@ -374,6 +678,85 @@
       </div>
     </section>
   </main>
-  <footer><div class="shell">A'ang Kurnia, S.T. / Civil Engineer</div></footer>
+  <footer class="window-footer"><div class="shell">A'ang Kurnia, S.T. / Civil Engineer</div></footer>
+  </div>
+
+  <div class="window-notice" id="window-notice" role="dialog" aria-labelledby="notice-title" aria-describedby="notice-copy" hidden>
+    <h2 id="notice-title">Portfolio window hidden</h2>
+    <p id="notice-copy">Open the profile again to continue browsing.</p>
+    <button class="restore-button" id="restore-window" type="button">Open portfolio</button>
+  </div>
+
+  <nav class="dock" aria-label="Quick navigation">
+    <a class="dock-link" href="#top" aria-label="Profile overview" title="Profile overview">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Profile</span>
+    </a>
+    <a class="dock-link" href="#experience" aria-label="Work experience" title="Work experience">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/></svg><span>Experience</span>
+    </a>
+    <a class="dock-link" href="#education" aria-label="Education" title="Education">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5zM6 11v5c3 3 9 3 12 0v-5m4-2v7"/></svg><span>Education</span>
+    </a>
+    <a class="dock-link" href="#certificates" aria-label="Certificates" title="Certificates">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM14 3v5h5m-11 4h8m-8 4h8m-8 4h5"/></svg><span>Certificates</span>
+    </a>
+    <a class="dock-link" href="#contact" aria-label="Contact" title="Contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span>
+    </a>
+    <span class="dock-divider" aria-hidden="true"></span>
+    <button class="dock-link" id="dock-restore" type="button" aria-label="Open portfolio window" title="Open portfolio window">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 8h18m-13 8 3-3 3 3"/></svg><span>Open app</span>
+    </button>
+  </nav>
+
+  <script>
+    const portfolioWindow = document.getElementById("portfolio-window");
+    const windowNotice = document.getElementById("window-notice");
+    const noticeTitle = document.getElementById("notice-title");
+    const noticeCopy = document.getElementById("notice-copy");
+
+    function hidePortfolio(title, message) {
+      portfolioWindow.classList.add("is-hidden");
+      windowNotice.hidden = false;
+      noticeTitle.textContent = title;
+      noticeCopy.textContent = message;
+      document.getElementById("restore-window").focus();
+    }
+
+    function restorePortfolio() {
+      portfolioWindow.classList.remove("is-hidden");
+      portfolioWindow.classList.remove("is-maximized");
+      document.getElementById("maximize-window").setAttribute("aria-pressed", "false");
+      windowNotice.hidden = true;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.getElementById("close-window").focus();
+    }
+
+    document.getElementById("close-window").addEventListener("click", () => {
+      hidePortfolio("Portfolio window closed", "Reopen the profile whenever you are ready.");
+    });
+    document.getElementById("minimize-window").addEventListener("click", () => {
+      hidePortfolio("Portfolio window minimized", "The profile is tucked away. Open it again from the dock.");
+    });
+    document.getElementById("maximize-window").addEventListener("click", (event) => {
+      const isMaximized = portfolioWindow.classList.toggle("is-maximized");
+      event.currentTarget.setAttribute("aria-pressed", String(isMaximized));
+    });
+    document.getElementById("restore-window").addEventListener("click", restorePortfolio);
+    document.getElementById("dock-restore").addEventListener("click", restorePortfolio);
+
+    const clock = document.getElementById("desktop-clock");
+    const updateClock = () => {
+      clock.textContent = new Intl.DateTimeFormat("en-ID", {
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit"
+      }).format(new Date());
+    };
+    updateClock();
+    window.setInterval(updateClock, 60000);
+  </script>
 </body>
 </html>
