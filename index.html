@@ -565,6 +565,23 @@
     .spotlight-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
     .spotlight-heading p { margin: 0 0 5px; color: rgba(255, 255, 255, .66); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
     .spotlight-heading h1 { margin: 0; color: white; font-family: var(--body); font-size: clamp(1.35rem, 2.2vw, 2rem); font-weight: 700; line-height: 1.15; text-transform: none; }
+    .spotlight-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .spotlight-cta {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255, 211, 103, .25), rgba(94, 158, 255, .22));
+      color: white;
+      font: 700 .75rem var(--body);
+      letter-spacing: .02em;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(8, 12, 38, .22);
+    }
+    .spotlight-cta:hover { filter: brightness(1.08); }
     .spotlight-hint { max-width: 260px; margin: 0; color: rgba(255, 255, 255, .58); font-size: .78rem; text-align: right; }
     .section-switches { display: flex; width: fit-content; max-width: 100%; gap: 6px; margin: 0 auto 24px; padding: 6px; overflow-x: auto; border: 1px solid rgba(255, 255, 255, .23); border-radius: 13px; background: rgba(7, 12, 37, .3); box-shadow: inset 0 1px 9px rgba(4, 7, 25, .2); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); scrollbar-width: none; }
     .section-switches::-webkit-scrollbar { display: none; }
@@ -715,7 +732,10 @@
     <main class="spotlight-interface" id="top">
       <header class="spotlight-heading">
         <div><p>Interactive career portfolio</p><h1>Explore A'ang's profile</h1></div>
-        <p class="spotlight-hint">Choose a section to bring it into focus.</p>
+        <div class="spotlight-actions">
+          <a class="spotlight-cta" href="cv-aang-kurnia-siemens-energy.html" target="_blank" rel="noopener noreferrer">View CV</a>
+          <p class="spotlight-hint">Choose a section to bring it into focus.</p>
+        </div>
       </header>
       <div class="section-switches" role="tablist" aria-label="Portfolio sections">
         <button class="section-switch" type="button" role="tab" id="tab-overview" aria-controls="spotlight-panel" aria-selected="true" tabindex="0" data-view="overview"><span class="switch-light" aria-hidden="true"></span><span>Profile</span></button>
@@ -758,6 +778,7 @@
         <p class="hero-copy">Civil Engineering graduate with hands-on experience supporting site supervision, structural quality inspections, drawing compliance, quantity and material verification, and project reporting. Safety-minded and ready to contribute to civil and structural delivery teams.</p>
         <div class="actions">
           <a class="button" href="mailto:goankproject027@gmail.com">Contact A'ang</a>
+          <a class="button secondary" href="cv-aang-kurnia-siemens-energy.html" target="_blank" rel="noopener noreferrer">View CV</a>
           <a class="button secondary" href="CV_Aang_Kurnia_Siemens_Energy.pdf" download>Download tailored CV</a>
         </div>
       </div>
